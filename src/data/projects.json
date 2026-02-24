@@ -1,4 +1,4 @@
-[
+﻿[
     {
         "Name":  "Artesano Eleva tus sentidos",
         "Slug":  "artesano-eleva-tus-sentidos",
@@ -20,7 +20,7 @@
         "Client":  "Bimbo ",
         "Year":  "2024",
         "Featured Project?":  "false",
-        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp\u003eDesarrollo de una campa�a bajo el concepto \u0027Eleva tus sentidos\u0027.\u003c/p\u003e"
+        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp\u003eDesarrollo de una campa\u0026ntilde;a bajo el concepto \u0027Eleva tus sentidos\u0027.\u003c/p\u003e"
     },
     {
         "Name":  "Danet Shake",
@@ -43,7 +43,7 @@
         "Client":  "Danone España",
         "Year":  "2020",
         "Featured Project?":  "false",
-        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp id=\"\"\u003eEn el proyecto Danet Shake nos especializamos en publicidad din�mica y animaci�n 3D con el lema \"Supera las distancias con Danet Shake.\" En medio de la pandemia, introdujimos el concepto innovador de enviar un mensaje personalizado con cada compra de Danet Shake, destacando la conexi�n emocional.\u003c/p\u003e\u003cp id=\"\"\u003e?\u003c/p\u003e"
+        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp id=\"\"\u003eEn el proyecto Danet Shake nos especializamos en publicidad din\u0026aacute;mica y animaci\u0026oacute;n 3D con el lema \"Supera las distancias con Danet Shake.\" En medio de la pandemia, introdujimos el concepto innovador de enviar un mensaje personalizado con cada compra de Danet Shake, destacando la conexi\u0026oacute;n emocional.\u003c/p\u003e\u003cp id=\"\"\u003e\u003c/p\u003e"
     },
     {
         "Name":  "ESPN Scrum Mundial 2023 ",
@@ -88,7 +88,7 @@
         "Client":  "Fox ",
         "Year":  "2020",
         "Featured Project?":  "false",
-        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp id=\"\"\u003eCon una cautivadora mezcla de estilos visuales 3D y 2D, nos asociamos con entusiasmo con FOX Premium para dar vida a la experiencia de la F�rmula 1. Desarrollamos la creatividad y ejecutamos la producci�n 3D, sumergiendo a la audiencia en la emoci�n y la velocidad de este apasionante mundo automotor.\u003c/p\u003e"
+        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp id=\"\"\u003eCon una cautivadora mezcla de estilos visuales 3D y 2D, nos asociamos con entusiasmo con FOX Premium para dar vida a la experiencia de la F\u0026oacute;rmula 1. Desarrollamos la creatividad y ejecutamos la producci\u0026oacute;n 3D, sumergiendo a la audiencia en la emoci\u0026oacute;n y la velocidad de este apasionante mundo automotor.\u003c/p\u003e"
     },
     {
         "Name":  "F1 Fox Premium",
@@ -111,7 +111,7 @@
         "Client":  "The Walt Disney",
         "Year":  "2020",
         "Featured Project?":  "false",
-        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp id=\"\"\u003eDesarrollo del programa de toolkit \u0027F1 Fox Premium\u0027\u003c/p\u003e\u003cp\u003e?\u003c/p\u003e"
+        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp id=\"\"\u003eDesarrollo del programa de toolkit \u0027F1 Fox Premium\u0027\u003c/p\u003e\u003cp id=\"\"\u003e\u003c/p\u003e"
     },
     {
         "Name":  "Invasión Marvel",
@@ -134,7 +134,7 @@
         "Client":  "The Walt Disney",
         "Year":  "2020",
         "Featured Project?":  "false",
-        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp id=\"\"\u003eDesarrollo del programa de toolkit \u0027Invasi�n Marvel\u0027\u003c/p\u003e\u003cp\u003e?\u003c/p\u003e"
+        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp id=\"\"\u003eDesarrollo del programa de toolkit \u0027Invasi\u0026oacute;n Marvel\u0027\u003c/p\u003e\u003cp id=\"\"\u003e\u003c/p\u003e"
     },
     {
         "Name":  "Sabaton",
@@ -157,6 +157,6 @@
         "Client":  "The Walt Disney ",
         "Year":  "2023",
         "Featured Project?":  "false",
-        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp\u003eDesarrollo de un toolkit para un segmento dentro de Disney Channel, para un marat�n de 3 horas que present� varios programas\u003c/p\u003e"
+        "Project Details ES":  "\u003ch3 id=\"\"\u003eObjetivo\u003c/h3\u003e\u003cp\u003eDesarrollo de un toolkit para un segmento dentro de Disney Channel, para un marat\u0026oacute;n de 3 horas que present\u0026oacute; varios programas\u003c/p\u003e"
     }
 ]
