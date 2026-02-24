@@ -67,6 +67,8 @@ const createTransform = (projects, t) => (doc) => {
   if (stats[1]) stats[1].textContent = t('home.stats.years')
   if (stats[2]) stats[2].textContent = t('home.stats.brands')
 
+  setHtml(doc, '.margin-150px .subhead', t('home.statsSubtitle'))
+  setHtml(doc, '[data-w-id="6f3713fe-ee5f-b0a3-fed4-ec90a52f89bd"]', t('home.statsSubtitle'))
   setHtml(doc, '.faq-grid .subhead', t('home.faq.title'))
   const faqQuestions = doc.querySelectorAll('.qa-text-main')
   const faqAnswers = doc.querySelectorAll('.toggle-content .paragraph')

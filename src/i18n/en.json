@@ -62,7 +62,6 @@
   "about.roles.cofounder": "Co-Founder",
   "about.roles.marketing": "Marketing",
   "about.roles.developer": "Developer",
-  "about.statsSubtitle": "We've analyzed the data and have <span class=\"gray-color\">compelling statistics to share.</span>",
   "about.stats.projects": "Projects Completed",
   "about.stats.years": "Years of Experience",
   "about.stats.awards": "Awards",
@@ -85,5 +84,6 @@
   "contact.faq.q3": "What types of content production, including 3D and 2D animation, does our studio offer?",
   "contact.faq.a3": "We offer a wide range of content production services, including 3D and 2D animation. We create visually engaging experiences to convey the unique message of each client.",
   "contact.faq.q4": "How does our studio contribute to the development of digital assets, such as websites and applications?",
-  "contact.faq.a4": "We contribute to the development of digital assets by creating websites and applications that reflect the brand identity, ensuring a strong and consistent presence in the digital environment."
+  "contact.faq.a4": "We contribute to the development of digital assets by creating websites and applications that reflect the brand identity, ensuring a strong and consistent presence in the digital environment.",
+  "home.statsSubtitle": "We've analyzed the data and have <span class=\"gray-color\">compelling statistics to share.</span>"
 }

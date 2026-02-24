@@ -85,5 +85,7 @@
   "contact.faq.q3": "¿Qué tipo de producción de contenido ofrecemos, incluyendo 2D y 3D?",
   "contact.faq.a3": "Ofrecemos una amplia gama de servicios de producción, incluyendo animación 2D y 3D, para crear experiencias visuales.",
   "contact.faq.q4": "¿Cómo contribuimos al desarrollo de activos digitales como sitios y apps?",
-  "contact.faq.a4": "Creamos sitios web y aplicaciones que reflejan la identidad de marca y aseguran una presencia digital sólida."
+  "contact.faq.a4": "Creamos sitios web y aplicaciones que reflejan la identidad de marca y aseguran una presencia digital sólida.",
+ "home.statsSubtitle": "Hemos analizado los datos y tenemos <span class=\"gray-color\">estadísticas clave para compartir.</span>"
+
 }
