@@ -44,7 +44,7 @@ const reveal = (el) => {
   }
 }
 
-const createTransform = (project, t) => (doc) => {
+const createTransform = (project, t, locale) => (doc) => {
   if (!project) return
   doc.title = project.name
 
@@ -100,7 +100,9 @@ const createTransform = (project, t) => (doc) => {
 
   const details = doc.querySelector('.rich-text-minus-20px')
   if (details) {
-    details.innerHTML = project.details || ''
+    const isSpanish = locale && locale.toLowerCase().startsWith('es')
+    const detailsHtml = isSpanish ? (project.detailsEs || project.details || '') : (project.details || '')
+    details.innerHTML = detailsHtml
     reveal(details)
   }
 
@@ -149,5 +151,6 @@ export default function ProjectDetailPage() {
     return <WebflowPage html={notFoundTemplate} />
   }
 
-  return <WebflowPage html={template} transform={createTransform(project, t)} refreshKey={locale} />
+  return <WebflowPage html={template} transform={createTransform(project, t, locale)} refreshKey={locale} />
 }
+

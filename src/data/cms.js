@@ -11,6 +11,7 @@ const normalizeProject = (row) => ({
   slug: row.Slug?.trim() || '',
   summary: row['Project Summary'] || '',
   details: row['Project Details'] || '',
+  detailsEs: row['Project Details ES'] || '',
   category: row.Category?.trim() || '',
   client: row.Client?.trim() || '',
   year: row.Year?.trim() || '',
@@ -73,3 +74,4 @@ export const cms = {
 export const getProjectBySlug = (slug) => projects.find((item) => item.slug === slug)
 export const getPostBySlug = (slug) => posts.find((item) => item.slug === slug)
 export const getProductBySlug = (slug) => products.find((item) => item.slug === slug)
+
