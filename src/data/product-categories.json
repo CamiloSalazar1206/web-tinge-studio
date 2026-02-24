@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Branding",
+    "Slug": "branding",
+    "Collection ID": "65dbf048dfd69f5cab7a7043",
+    "Locale ID": "65dbf048dfd69f5cab7a7018",
+    "Item ID": "65dbf048dfd69f5cab7a70d7",
+    "Archived": "false",
+    "Draft": "false",
+    "Created On": "Mon Jul 24 2023 15:36:49 GMT+0000 (Coordinated Universal Time)",
+    "Updated On": "Mon Jul 24 2023 15:36:49 GMT+0000 (Coordinated Universal Time)",
+    "Published On": "Mon Feb 26 2024 02:58:51 GMT+0000 (Coordinated Universal Time)"
+  },
+  {
+    "Name": "Website",
+    "Slug": "website",
+    "Collection ID": "65dbf048dfd69f5cab7a7043",
+    "Locale ID": "65dbf048dfd69f5cab7a7018",
+    "Item ID": "65dbf048dfd69f5cab7a70d8",
+    "Archived": "false",
+    "Draft": "false",
+    "Created On": "Mon Jul 24 2023 15:36:49 GMT+0000 (Coordinated Universal Time)",
+    "Updated On": "Mon Jul 24 2023 15:36:49 GMT+0000 (Coordinated Universal Time)",
+    "Published On": "Mon Feb 26 2024 02:58:51 GMT+0000 (Coordinated Universal Time)"
+  }
+]

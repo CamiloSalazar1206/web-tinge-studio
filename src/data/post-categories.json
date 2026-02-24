@@ -1,0 +1,41 @@
+[
+  {
+    "Name": "Code",
+    "Slug": "code",
+    "Collection ID": "65dbf048dfd69f5cab7a7041",
+    "Locale ID": "65dbf048dfd69f5cab7a7018",
+    "Item ID": "65dbf048dfd69f5cab7a7052",
+    "Archived": "false",
+    "Draft": "false",
+    "Created On": "Thu Mar 02 2023 13:05:35 GMT+0000 (Coordinated Universal Time)",
+    "Updated On": "Mon Mar 06 2023 14:17:37 GMT+0000 (Coordinated Universal Time)",
+    "Published On": "Mon Feb 26 2024 02:58:51 GMT+0000 (Coordinated Universal Time)",
+    "Color": "hsla(124, 100.00%, 44.31%, 1.00)"
+  },
+  {
+    "Name": "Design",
+    "Slug": "design",
+    "Collection ID": "65dbf048dfd69f5cab7a7041",
+    "Locale ID": "65dbf048dfd69f5cab7a7018",
+    "Item ID": "65dbf048dfd69f5cab7a7056",
+    "Archived": "false",
+    "Draft": "false",
+    "Created On": "Thu Mar 02 2023 13:05:48 GMT+0000 (Coordinated Universal Time)",
+    "Updated On": "Mon Mar 06 2023 14:17:18 GMT+0000 (Coordinated Universal Time)",
+    "Published On": "Mon Feb 26 2024 02:58:51 GMT+0000 (Coordinated Universal Time)",
+    "Color": "hsla(251, 100.00%, 44.31%, 1.00)"
+  },
+  {
+    "Name": "Marketing",
+    "Slug": "marketing",
+    "Collection ID": "65dbf048dfd69f5cab7a7041",
+    "Locale ID": "65dbf048dfd69f5cab7a7018",
+    "Item ID": "65dbf048dfd69f5cab7a7051",
+    "Archived": "false",
+    "Draft": "false",
+    "Created On": "Thu Mar 02 2023 13:05:41 GMT+0000 (Coordinated Universal Time)",
+    "Updated On": "Mon Mar 06 2023 14:17:26 GMT+0000 (Coordinated Universal Time)",
+    "Published On": "Mon Feb 26 2024 02:58:51 GMT+0000 (Coordinated Universal Time)",
+    "Color": "hsla(22, 100.00%, 44.31%, 1.00)"
+  }
+]
