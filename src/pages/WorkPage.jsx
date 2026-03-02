@@ -1,41 +1,43 @@
 import WebflowPage from '../components/WebflowPage.jsx'
 import template from './raw/work.html?raw'
 import { cms } from '../data/cms.js'
-import { escapeHtml } from '../utils/html.js'
 import { useI18n } from '../i18n/index.jsx'
 import { applyFooterTranslations, applyNavTranslations, setHtml } from '../utils/i18nDom.js'
-
-const buildProjectItem = (project) => `
-  <div role="listitem" class="w-dyn-item">
-    <div class="work-wrapper">
-      <img alt="${escapeHtml(project.name)}" loading="eager" src="${project.images[0] || ''}" class="work-photo">
-      <a href="/project/${project.slug}" class="project-circle w-inline-block">
-        <div class="view-project-main">
-          <div class="scroll-down eye" data-animation-type="lottie" data-src="documents/Animation---1700576146214.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2.2333333333333334" data-duration="0"></div>
-        </div>
-      </a>
-      <div class="text-rotator-wrapper">
-        <div class="text-rotator-content">
-          <h3 class="text-rotator">${escapeHtml(project.name)}</h3>
-          <div class="start-icon"></div>
-        </div>
-        <div class="text-rotator-content">
-          <h3 class="text-rotator">${escapeHtml(project.name)}</h3>
-          <div class="start-icon"></div>
-        </div>
-        <div class="text-rotator-content">
-          <h3 class="text-rotator">${escapeHtml(project.name)}</h3>
-          <div class="start-icon"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-`
 
 const createTransform = (projects, t) => (doc) => {
   const grid = doc.querySelector('.project-grid')
   if (!grid) return
-  grid.innerHTML = projects.map(buildProjectItem).join('')
+
+  // Preserve Webflow-generated markup (data-w-id + w-dyn-* bindings) by cloning the template item.
+  // This is required for some interactions (e.g. hover/mouse-follow) to keep working after injection.
+  const templateItem = grid.querySelector('.w-dyn-item')
+  if (!templateItem) return
+
+  grid.innerHTML = ''
+  const fragment = doc.createDocumentFragment()
+  projects.forEach((project) => {
+    const item = templateItem.cloneNode(true)
+
+    const image = item.querySelector('img.work-photo')
+    if (image) {
+      image.setAttribute('alt', project.name || '')
+      image.setAttribute('src', project.images?.[0] || '')
+      image.classList.remove('w-dyn-bind-empty')
+    }
+
+    const link = item.querySelector('a.project-circle')
+    if (link) link.setAttribute('href', `/project/${project.slug}`)
+
+    const titles = item.querySelectorAll('h3.text-rotator')
+    titles.forEach((h3) => {
+      h3.textContent = project.name || ''
+      h3.classList.remove('w-dyn-bind-empty')
+    })
+
+    fragment.appendChild(item)
+  })
+  grid.appendChild(fragment)
+
   const empty = doc.querySelector('.w-dyn-empty')
   if (empty) empty.remove()
 

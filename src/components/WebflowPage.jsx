@@ -73,7 +73,92 @@ export default function WebflowPage({ html, transform, refreshKey }) {
       document.dispatchEvent(new Event('readystatechange'))
     }
 
+    const attachMouseFollowers = () => {
+      const root = containerRef.current
+      if (!root) return () => {}
+
+      const wrappers = Array.from(root.querySelectorAll('.work-wrapper'))
+      const cleanups = wrappers
+        .map((wrapper) => {
+          const circle = wrapper.querySelector('.project-circle')
+          if (!circle) return null
+
+          // Make movement feel smooth and prevent visible "jump" between cards.
+          // We lerp towards the pointer position in a rAF loop, and hide on leave.
+          circle.style.transform = 'translate(-50%, -50%)'
+          circle.style.transition = 'opacity 120ms ease'
+          circle.style.opacity = '0'
+
+          let targetX = 0
+          let targetY = 0
+          let currentX = 0
+          let currentY = 0
+          let raf = 0
+          let active = false
+
+          const setTargetFromEvent = (event) => {
+            const rect = wrapper.getBoundingClientRect()
+            targetX = event.clientX - rect.left
+            targetY = event.clientY - rect.top
+          }
+
+          const tick = () => {
+            if (!active) {
+              raf = 0
+              return
+            }
+            // Lerp factor: smaller = smoother/slower.
+            const alpha = 0.18
+            currentX += (targetX - currentX) * alpha
+            currentY += (targetY - currentY) * alpha
+            circle.style.left = `${currentX}px`
+            circle.style.top = `${currentY}px`
+            raf = window.requestAnimationFrame(tick)
+          }
+
+          const onEnter = (event) => {
+            active = true
+            setTargetFromEvent(event)
+            // Start exactly at cursor on enter (no jump), then lerp.
+            currentX = targetX
+            currentY = targetY
+            circle.style.left = `${currentX}px`
+            circle.style.top = `${currentY}px`
+            circle.style.opacity = '1'
+            if (!raf) raf = window.requestAnimationFrame(tick)
+          }
+
+          const onMove = (event) => {
+            if (!active) return
+            setTargetFromEvent(event)
+          }
+
+          const onLeave = () => {
+            active = false
+            circle.style.opacity = '0'
+          }
+
+          wrapper.addEventListener('mouseenter', onEnter)
+          wrapper.addEventListener('mousemove', onMove)
+          wrapper.addEventListener('mouseleave', onLeave)
+
+          return () => {
+            active = false
+            if (raf) window.cancelAnimationFrame(raf)
+            wrapper.removeEventListener('mouseenter', onEnter)
+            wrapper.removeEventListener('mousemove', onMove)
+            wrapper.removeEventListener('mouseleave', onLeave)
+          }
+        })
+        .filter(Boolean)
+
+      return () => {
+        cleanups.forEach((fn) => fn())
+      }
+    }
+
     const id = window.requestAnimationFrame(runWebflow)
+    const detachMouseFollowers = attachMouseFollowers()
     const fallbackId = window.setTimeout(() => {
       const root = containerRef.current
       if (!root) return
@@ -106,6 +191,7 @@ export default function WebflowPage({ html, transform, refreshKey }) {
 
     return () => {
       window.cancelAnimationFrame(id)
+      detachMouseFollowers()
       window.clearTimeout(fallbackId)
       window.clearTimeout(fallbackId2)
     }
