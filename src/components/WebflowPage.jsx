@@ -1,5 +1,15 @@
 import { useEffect, useMemo, useRef } from 'react'
 
+const CONTACT_FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT || ''
+
+const encodeFormBody = (formData) => {
+  const params = new URLSearchParams()
+  formData.forEach((value, key) => {
+    params.append(key, String(value))
+  })
+  return params.toString()
+}
+
 const ROUTE_MAP = {
   'index.html': '/',
   'about.html': '/about',
@@ -27,8 +37,8 @@ const toAbsoluteAssets = (html) => {
 const toSpaLinks = (html) => {
   let output = html
   for (const [from, to] of Object.entries(ROUTE_MAP)) {
-    const rx = new RegExp(`href=\"${from}\"`, 'g')
-    output = output.replace(rx, `href=\"${to}\"`)
+    const rx = new RegExp(`href="${from}"`, 'g')
+    output = output.replace(rx, `href="${to}"`)
   }
   return output
 }
@@ -49,7 +59,7 @@ const parseHtml = (html, transform) => {
 
 export default function WebflowPage({ html, transform, refreshKey }) {
   const containerRef = useRef(null)
-  const parsed = useMemo(() => parseHtml(html, transform), [html, transform, refreshKey])
+  const parsed = useMemo(() => parseHtml(html, transform), [html, transform])
   const content = useMemo(() => toSpaLinks(toAbsoluteAssets(parsed.body)), [parsed.body])
 
   useEffect(() => {
@@ -157,8 +167,115 @@ export default function WebflowPage({ html, transform, refreshKey }) {
       }
     }
 
+    const attachContactFormHandler = () => {
+      const root = containerRef.current
+      if (!root) return () => {}
+
+      const sourceForm = root.querySelector('#wf-form-Contact')
+      if (!sourceForm) return () => {}
+
+      const parent = sourceForm.parentNode
+      if (!parent) return () => {}
+
+      const form = sourceForm.cloneNode(true)
+      parent.replaceChild(form, sourceForm)
+
+      form.setAttribute('method', 'POST')
+      form.setAttribute('name', form.getAttribute('data-name') || form.getAttribute('name') || 'Contact')
+      form.setAttribute('data-netlify', 'true')
+
+      const wrapper = form.closest('.w-form')
+      const doneBlock = wrapper?.querySelector('.w-form-done') || null
+      const failBlock = wrapper?.querySelector('.w-form-fail') || null
+      const submitButton = form.querySelector('input[type="submit"], button[type="submit"]')
+      const originalSubmitLabel = submitButton?.value || submitButton?.textContent || ''
+      const waitLabel = submitButton?.getAttribute('data-wait') || 'Please wait...'
+
+      if (doneBlock) doneBlock.style.display = 'none'
+      if (failBlock) failBlock.style.display = 'none'
+      form.style.display = 'block'
+
+      const showSuccess = () => {
+        form.style.display = 'none'
+        if (failBlock) failBlock.style.display = 'none'
+        if (doneBlock) doneBlock.style.display = 'block'
+      }
+
+      const showError = () => {
+        form.style.display = 'block'
+        if (doneBlock) doneBlock.style.display = 'none'
+        if (failBlock) failBlock.style.display = 'block'
+      }
+
+      const setSubmitting = (submitting) => {
+        if (!submitButton) return
+        submitButton.disabled = submitting
+        if ('value' in submitButton) {
+          submitButton.value = submitting ? waitLabel : originalSubmitLabel
+        } else {
+          submitButton.textContent = submitting ? waitLabel : originalSubmitLabel
+        }
+      }
+
+      const onSubmit = async (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        if (event.stopImmediatePropagation) {
+          event.stopImmediatePropagation()
+        }
+
+        const endpoint = (form.getAttribute('action') || CONTACT_FORM_ENDPOINT || '/').trim()
+
+        setSubmitting(true)
+
+        try {
+          const method = ((form.getAttribute('method') || 'POST').toUpperCase() === 'GET') ? 'POST' : (form.getAttribute('method') || 'POST').toUpperCase()
+          const payload = new FormData(form)
+          const formName = form.getAttribute('name') || form.getAttribute('data-name') || 'Contact'
+
+          if (!payload.get('form-name')) {
+            payload.append('form-name', formName)
+          }
+
+          const useNetlifyFormat = !CONTACT_FORM_ENDPOINT
+
+          const response = await fetch(endpoint, useNetlifyFormat
+            ? {
+                method,
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: encodeFormBody(payload),
+              }
+            : {
+                method,
+                body: payload,
+              })
+
+          if (!response.ok) {
+            throw new Error(`Contact form request failed: ${response.status}`)
+          }
+
+          form.reset()
+          showSuccess()
+        } catch (error) {
+          console.error(error)
+          showError()
+        } finally {
+          setSubmitting(false)
+        }
+      }
+
+      form.addEventListener('submit', onSubmit)
+
+      return () => {
+        form.removeEventListener('submit', onSubmit)
+      }
+    }
+
     const id = window.requestAnimationFrame(runWebflow)
     const detachMouseFollowers = attachMouseFollowers()
+    const detachContactFormHandler = attachContactFormHandler()
     const fallbackId = window.setTimeout(() => {
       const root = containerRef.current
       if (!root) return
@@ -192,6 +309,7 @@ export default function WebflowPage({ html, transform, refreshKey }) {
     return () => {
       window.cancelAnimationFrame(id)
       detachMouseFollowers()
+      detachContactFormHandler()
       window.clearTimeout(fallbackId)
       window.clearTimeout(fallbackId2)
     }

@@ -268,7 +268,32 @@ npm run preview # Preview del build
 
 ---
 
-# 7. Mejoras futuras recomendadas
+# 7. Configuración del formulario de contacto
+
+El formulario de `/contact` ya no usa el backend de Webflow (en export deja de funcionar).
+
+## Opción A (actual) — Netlify Forms
+
+El proyecto ya quedó preparado para Netlify Forms en SPA:
+
+* incluye formulario oculto en `index.html` para detección en build
+* envía a `/` en formato `application/x-www-form-urlencoded`
+
+Solo debes desplegar en Netlify y verificar envíos en **Site settings → Forms**.
+
+## Opción B — Endpoint externo (opcional)
+
+Si prefieres Formspree o API propia, define un endpoint HTTP en `.env.local`:
+
+```bash
+VITE_CONTACT_FORM_ENDPOINT=https://tu-endpoint-de-formularios
+```
+
+También puedes usar la plantilla `.env.local.example`.
+
+---
+
+# 8. Mejoras futuras recomendadas
 
 * Migrar HTML crítico a JSX (para mejor control y performance)
 * Reducir uso de `dangerouslySetInnerHTML`
@@ -278,7 +303,7 @@ npm run preview # Preview del build
 
 ---
 
-# 8. Consideraciones Técnicas Importantes
+# 9. Consideraciones Técnicas Importantes
 
 * El proyecto ya no depende de Webflow
 * El CMS es completamente local
