@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useRef } from 'react'
 
 const CONTACT_FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT || ''
+const CONTACT_RECIPIENTS = (import.meta.env.VITE_CONTACT_RECIPIENTS || 'jonathan.cocuy@tingestudio.co,camilo.tacue@tingestudio.co')
+  .split(',')
+  .map((email) => email.trim())
+  .filter(Boolean)
 
 const encodeFormBody = (formData) => {
   const params = new URLSearchParams()
@@ -184,6 +188,30 @@ export default function WebflowPage({ html, transform, refreshKey }) {
       form.setAttribute('name', form.getAttribute('data-name') || form.getAttribute('name') || 'Contact')
       form.setAttribute('data-netlify', 'true')
 
+      const ensureHiddenField = (name, value) => {
+        let input = form.querySelector(`input[name="${name}"]`)
+        if (!input) {
+          input = document.createElement('input')
+          input.type = 'hidden'
+          input.name = name
+          form.appendChild(input)
+        }
+        input.value = value
+      }
+
+      if (CONTACT_RECIPIENTS.length) {
+        const recipientsValue = CONTACT_RECIPIENTS.join(',')
+        const ccRecipients = CONTACT_RECIPIENTS.slice(1).join(',')
+
+        // Compatibilidad con distintos proveedores (API propia, FormSubmit, etc.)
+        ensureHiddenField('to', recipientsValue)
+        ensureHiddenField('recipients', recipientsValue)
+        if (ccRecipients) {
+          ensureHiddenField('cc', ccRecipients)
+          ensureHiddenField('_cc', ccRecipients)
+        }
+      }
+
       const wrapper = form.closest('.w-form')
       const doneBlock = wrapper?.querySelector('.w-form-done') || null
       const failBlock = wrapper?.querySelector('.w-form-fail') || null
@@ -235,6 +263,16 @@ export default function WebflowPage({ html, transform, refreshKey }) {
 
           if (!payload.get('form-name')) {
             payload.append('form-name', formName)
+          }
+
+          if (CONTACT_RECIPIENTS.length) {
+            const recipientsValue = CONTACT_RECIPIENTS.join(',')
+            const ccRecipients = CONTACT_RECIPIENTS.slice(1).join(',')
+
+            if (!payload.get('to')) payload.append('to', recipientsValue)
+            if (!payload.get('recipients')) payload.append('recipients', recipientsValue)
+            if (ccRecipients && !payload.get('cc')) payload.append('cc', ccRecipients)
+            if (ccRecipients && !payload.get('_cc')) payload.append('_cc', ccRecipients)
           }
 
           const useNetlifyFormat = !CONTACT_FORM_ENDPOINT
