@@ -65,8 +65,8 @@ const SEGMENTS = {
         slug: 'invasion-marvel',
         desc: 'Tres programas, tres sistemas gráficos: Invasión Marvel, Sabatón y F1 Fox Premium. La fuerza de cada franquicia traducida a piezas que operan el canal día a día.',
         metrics: [
-          { num: '3', label: 'sistemas gráficos al aire', color: '#0055FF' },
-          { text: '2020 – 2023', label: 'trabajando juntos', color: '#C084FC' },
+          { num: '3', label: 'franquicias con sistema gráfico propio', color: '#0055FF' },
+          { num: '×3', label: 'Disney volvió a elegirnos, de 2020 a 2023', color: '#C084FC' },
         ],
       },
       {
@@ -74,7 +74,7 @@ const SEGMENTS = {
         slug: 'espn-scrum-mundial-2023',
         desc: 'La cobertura del Mundial de Rugby con identidad propia: dirección de arte y animación para el aire de ESPN, junto a Estudio.la.',
         metrics: [
-          { text: 'Mundial de Rugby 2023', label: 'evento en vivo para toda la región', color: '#A3FF12' },
+          { text: 'Mundial de Rugby 2023', label: 'la cobertura completa al aire en la región', color: '#A3FF12' },
         ],
       },
     ],
