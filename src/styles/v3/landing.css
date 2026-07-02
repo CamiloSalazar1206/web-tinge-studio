@@ -8,12 +8,6 @@
 .rc-lp-eyebrow { margin-bottom: 0; }
 .rc-lp-title { color: #fff; font-size: clamp(30px, 4.4vw, 60px); line-height: 1.0; }
 
-/* Métricas del segmento: fila horizontal, cifras grandes */
-.rc-lp-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px 28px; }
-.rc-lp-metric { border-top: 1px solid var(--line); padding-top: 16px; }
-.rc-lp-metric-num { font-family: 'Klein Condensed', 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(38px, 3.6vw, 58px); line-height: 1; margin-bottom: 8px; }
-.rc-lp-metric-label { font-size: 14px; line-height: 1.35; color: var(--muted); }
-
 /* Sección de conversión */
 .rc-lp-form { padding: 90px var(--pad); border-top: 1px solid var(--line); }
 .rc-lp-form-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px 72px; align-items: start; max-width: 1200px; margin: 0 auto; }

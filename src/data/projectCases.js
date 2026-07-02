@@ -102,9 +102,9 @@ export const projectCases = {
     ],
     metrics: [
       { num: '–50%', label: 'Tiempo de producción', color: '#A3FF12' },
-      { num: 'IA+H', label: 'Flujo híbrido', color: '#FF6B9D' },
+      { num: '+40%', label: 'Reutilización de contenido', color: '#FF6B9D' },
       { num: '40+', label: 'Submarcas gestionadas', color: '#0055FF' },
-      { num: '100%', label: 'Estándar profesional', color: '#C084FC' },
+      { num: '2×', label: 'Piezas en la mitad del tiempo', color: '#C084FC' },
     ],
     // Videos primero. Todas las piezas de Bimbo son verticales, van en pares.
     visuals: [

@@ -27,12 +27,30 @@ const SEGMENTS = {
     heroVideo: '/videos/wbtv-rebrand-bento.mp4',
     heroPoster: '/videos/wbtv-rebrand-bento.jpg',
     cases: ['warner-channel', 'espn-scrum-mundial-2023', 'invasion-marvel', 'sabaton', 'f1-fox-premium', 'f1-fox-premium-2'],
-    resultsTitle: 'Lo que pasó con Warner Channel TV.',
+    resultsTitle: 'Resultados reales.',
     results: [
-      { num: '–80%', label: 'Búsqueda de assets', color: '#A3FF12' },
-      { num: '3x', label: 'Producción on-air', color: '#FF6B9D' },
-      { num: '100%', label: 'Adopción semana 1', color: '#0055FF' },
-      { num: '0', label: 'Inconsistencias', color: '#C084FC' },
+      {
+        brand: 'Warner Channel TV',
+        desc: 'Rebranding, identidad en movimiento y hub de assets para toda Latinoamérica.',
+        metrics: [
+          { num: '–80%', label: 'búsqueda de assets', color: '#A3FF12' },
+          { num: '+3×', label: 'producción on-air', color: '#FF6B9D' },
+        ],
+      },
+      {
+        brand: 'The Walt Disney Company',
+        desc: 'Toolkits de programa para Invasión Marvel, Sabatón y F1 Fox Premium.',
+        metrics: [
+          { num: '3', label: 'toolkits al aire', color: '#0055FF' },
+        ],
+      },
+      {
+        brand: 'ESPN · Estudio.la',
+        desc: 'Animación para la cobertura del Scrum Mundial de Rugby 2023.',
+        metrics: [
+          { text: 'Mundial de Rugby 2023', color: '#C084FC' },
+        ],
+      },
     ],
     quotes: projectCases['warner-channel'].quotes,
     ctaTitle: 'Tu marca ya vive en la memoria de la gente.',
@@ -45,12 +63,31 @@ const SEGMENTS = {
     sub: 'Campañas y sistemas de producción con IA para Bimbo y Danone: más contenido, en menos tiempo, sin perder la marca.',
     heroImage: '/casos/bimbo-cover.jpg',
     cases: ['bimbo', 'artesano-eleva-tus-sentidos', 'danet-shake'],
-    resultsTitle: 'Lo que pasó con Bimbo.',
+    resultsTitle: 'Resultados reales.',
     results: [
-      { num: '–50%', label: 'Tiempo de producción', color: '#A3FF12' },
-      { num: '+22 pts', label: 'Value SOM (Artesano)', color: '#FF6B9D' },
-      { num: '40+', label: 'Submarcas gestionadas', color: '#0055FF' },
-      { num: '100%', label: 'Estándar profesional', color: '#C084FC' },
+      {
+        brand: 'Bimbo · Vital',
+        desc: 'Sistema de producción con IA y curaduría humana sobre los assets que ya existían.',
+        metrics: [
+          { num: '–50%', label: 'tiempo de producción', color: '#A3FF12' },
+          { num: '+40%', label: 'reutilización de contenido', color: '#FF6B9D' },
+        ],
+      },
+      {
+        brand: 'Bimbo · Artesano',
+        desc: 'Campaña regional en Colombia, Ecuador y Centroamérica.',
+        metrics: [
+          { num: '+22 pts', label: 'Value SOM', color: '#0055FF' },
+          { text: 'Premio GBF 2022', color: '#C084FC' },
+        ],
+      },
+      {
+        brand: 'Danone · Danet Shake',
+        desc: 'Comercial en plena pandemia con un mensaje personalizado en cada compra.',
+        metrics: [
+          { num: '3', label: 'influencers de la juventud española', color: '#A3FF12' },
+        ],
+      },
     ],
     quotes: projectCases.bimbo.quotes,
     ctaTitle: 'Tu marca necesita más contenido cada mes.',
@@ -86,6 +123,32 @@ export default function SegmentLanding({ segment }) {
         </div>
       </section>
 
+      {/* RESULTADOS por caso: qué se hizo + cifra real, nada de humo */}
+      <section className="rc-results">
+        <Reveal className="rc-results-head">
+          <span className="rc-eyebrow">Resultados</span>
+          <h2 className="rc-display">{cfg.resultsTitle}</h2>
+        </Reveal>
+        <div className="rc-results-grid">
+          {cfg.results.map((r, i) => (
+            <Reveal className="rc-result" key={r.brand} delay={i * 0.08}>
+              <h3 className="rc-result-brand">{r.brand}</h3>
+              <p className="rc-result-desc">{r.desc}</p>
+              <div className="rc-result-metrics">
+                {r.metrics.map((m, j) => (
+                  <div className="rc-result-metric" key={j}>
+                    <span className="rc-result-num" style={{ color: m.color || 'var(--blue)' }}>
+                      {m.text || m.num}
+                    </span>
+                    {m.label && <span className="rc-result-lbl">{m.label}</span>}
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* CASOS del segmento */}
       <section className="rc-projects" id="casos">
         <Reveal className="rc-projects-head">
@@ -104,22 +167,6 @@ export default function SegmentLanding({ segment }) {
                   <span className="rc-card-title">{c.client}</span>
                 </div>
               </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* RESULTADOS del segmento */}
-      <section className="rc-results">
-        <Reveal className="rc-results-head">
-          <span className="rc-eyebrow">Resultados</span>
-          <h2 className="rc-display">{cfg.resultsTitle}</h2>
-        </Reveal>
-        <div className="rc-lp-metrics">
-          {cfg.results.map((m) => (
-            <Reveal className="rc-lp-metric" key={m.label}>
-              <div className="rc-lp-metric-num" style={{ color: m.color }}>{m.num}</div>
-              <div className="rc-lp-metric-label">{m.label}</div>
             </Reveal>
           ))}
         </div>
