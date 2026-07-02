@@ -162,7 +162,7 @@ export default function SegmentLanding({ segment }) {
       </section>
 
       {/* RESULTADOS por caso: qué se hizo + cifra real, nada de humo */}
-      <section className="rc-results">
+      <section className="rc-results rc-lp-results">
         <Reveal className="rc-results-head">
           <span className="rc-eyebrow">Resultados</span>
           <h2 className="rc-display">{cfg.resultsTitle}</h2>
