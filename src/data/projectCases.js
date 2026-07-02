@@ -26,6 +26,7 @@ export const projectCases = {
     serviciosList: ['Estrategia de marca', 'Diseño de identidad', 'Producción de contenido', 'Toolkit en 7 categorías', 'Hub digital'],
     resultado: 'Brand hub operativo · Toolkit en 7 categorías · Acceso unificado',
     logo: '/casos/warner-logo-animation.mp4',
+    cover: '/videos/wbtv-rebrand-bento.jpg',
     pipeline: [
       { step: 'Estrategia de marca', color: '#A3FF12' },
       { step: 'Diseño de identidad', color: '#FF6B9D' },
@@ -92,6 +93,7 @@ export const projectCases = {
     resultado: 'Producción IA + curaduría humana · –50% tiempos · Flujo profesional',
     serviciosList: ['Diagnóstico de flujo', 'Integración de IA', 'Curaduría humana', 'Producción optimizada'],
     logo: '/casos/bimbo-logo.png',
+    cover: '/casos/bimbo-cover.jpg',
     pipeline: [
       { step: 'Diagnóstico de flujo', color: '#A3FF12' },
       { step: 'Integración IA', color: '#FF6B9D' },

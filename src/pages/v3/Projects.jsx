@@ -20,7 +20,7 @@ const ORDER = [
   'f1-fox-premium-2',
 ]
 
-const cardImage = (c) => (c.visuals || []).find((v) => v.type === 'image')?.src
+const cardImage = (c) => c.cover || (c.visuals || []).find((v) => v.type === 'image')?.src
 
 export default function ProjectsV3() {
   const cases = ORDER.map((slug) => projectCases[slug]).filter(Boolean)

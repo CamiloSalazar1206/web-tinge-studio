@@ -131,12 +131,10 @@ export default function CaseStudyV3() {
   const carousel = [
     ...Object.values(projectCases)
       .filter((c) => c.slug !== slug)
-      .flatMap((c) =>
-        (c.visuals || [])
-          .filter((v) => v.type === 'image')
-          .slice(0, 1)
-          .map((v) => ({ src: v.src, slug: c.slug, alt: c.client }))
-      ),
+      .map((c) => {
+        const src = c.cover || (c.visuals || []).find((v) => v.type === 'image')?.src
+        return src ? { src, slug: c.slug, alt: c.client } : null
+      }),
     ...cms.projects
       .filter((p) => p.slug !== slug && !projectCases[p.slug])
       .map((p) => ({ src: p.images?.[0], slug: p.slug, alt: p.name })),
