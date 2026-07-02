@@ -94,4 +94,7 @@
   .rc-c2 { grid-template-columns: 1fr; padding-top: 96px; }
   .rc-c2-side { position: static; order: -1; }
   .rc-bento-quotes.q2, .rc-bento-quotes.q3 { grid-template-columns: 1fr; }
+  .rc-bento-quote { padding: 24px 24px 24px 28px; gap: 18px; }
+  .rc-proj-more { margin-top: 40px; }
+  .rc-proj-more-head { padding-top: 28px; }
 }

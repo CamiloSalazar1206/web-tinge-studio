@@ -76,5 +76,7 @@
   .rc-projects-head { flex-direction: column; align-items: flex-start; }
   .rc-hero-title { white-space: normal; font-size: clamp(30px, 8vw, 42px); line-height: 1.05; }
   .rc-method-grid { grid-template-columns: 1fr; gap: 40px; }
-  .rc-method, .rc-projects, .rc-results, .rc-final { padding-top: 80px; padding-bottom: 80px; }
+  .rc-method, .rc-projects, .rc-results, .rc-final { padding-top: 54px; padding-bottom: 54px; }
+  .rc-result { padding: 24px; }
+  .rc-result-metrics { margin-top: 20px; padding-top: 18px; }
 }

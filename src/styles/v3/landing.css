@@ -27,6 +27,9 @@
 .rc-lp-form-intro .rc-display { margin-bottom: 14px; }
 
 @media (max-width: 900px) {
-  .rc-lp-form-grid { grid-template-columns: 1fr; }
+  .rc-lp-form-grid { grid-template-columns: 1fr; gap: 30px; }
+  .rc-lp-form { padding: 56px var(--pad); }
+  .rc-lp-hero { height: 92vh; }
   .rc-lp-title { font-size: clamp(28px, 7vw, 40px); }
+  .rc-lp-ctas a { width: 100%; max-width: 320px; justify-content: center; text-align: center; display: inline-flex; align-items: center; }
 }
