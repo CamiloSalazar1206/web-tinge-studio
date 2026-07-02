@@ -1,0 +1,16 @@
+/* =========================================================================
+   TINGE v3 · PROYECTOS — portafolio completo en la grilla de tarjetas.
+   Requiere base.css.
+   ========================================================================= */
+
+.rc-plist { padding: 150px var(--pad) 40px; min-height: calc(100vh - 200px); }
+.rc-plist-head { margin-bottom: 34px; }
+.rc-plist-title { margin-bottom: 12px; }
+.rc-plist-sub { font-size: clamp(15px, 1.4vw, 18px); line-height: 1.5; color: var(--muted); }
+.rc-plist-grid { margin-bottom: 26px; }
+.rc-plist-cta { display: flex; align-items: center; justify-content: center; gap: 24px; padding: 44px 0 30px; border-top: 1px solid var(--line); margin-top: 34px; }
+
+@media (max-width: 900px) {
+  .rc-plist { padding-top: 120px; }
+  .rc-plist-cta { flex-direction: column; gap: 16px; text-align: center; }
+}

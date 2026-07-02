@@ -122,7 +122,7 @@ export default function CaseStudyV3() {
         <RcNav base="/" />
         <section className="rc-proj-missing">
           <h1 className="rc-display">Proyecto no encontrado.</h1>
-          <Link to="/#casos" className="rc-btn-outline">Ver todos los casos</Link>
+          <Link to="/proyectos" className="rc-btn-outline">Ver todos los casos</Link>
         </section>
         <RcFooter base="/" />
       </div>
@@ -278,7 +278,7 @@ export default function CaseStudyV3() {
       <section className="rc-proj-more">
         <div className="rc-proj-more-head">
           <span className="rc-eyebrow">Más proyectos</span>
-          <Link to="/#casos" className="rc-btn-outline">Ver todos los casos</Link>
+          <Link to="/proyectos" className="rc-btn-outline">Ver todos los casos</Link>
         </div>
       </section>
       <RcMarquee items={carousel} ariaLabel="Más proyectos" />

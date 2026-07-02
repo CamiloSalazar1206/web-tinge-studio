@@ -114,7 +114,7 @@ export default function HomeV3() {
             <span className="rc-eyebrow">Casos</span>
             <h2 className="rc-display">Marcas que siguen creciendo.</h2>
           </div>
-          <Link to="/work" className="rc-btn-outline">Ver todos los proyectos</Link>
+          <Link to="/proyectos" className="rc-btn-outline">Ver todos los proyectos</Link>
         </Reveal>
         <div className="rc-cards rc-cards-6">
           {grid.map((p, i) => (

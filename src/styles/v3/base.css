@@ -118,9 +118,19 @@
 .rc-foot-h { text-transform: uppercase; letter-spacing: 1px; font-size: 11px; opacity: 0.6; margin-bottom: 6px; }
 .rc-foot-legal { display: flex; flex-wrap: wrap; gap: 30px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.25); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
 
+/* ---------- Tarjetas de proyecto (home + página proyectos) ------------- */
+.rc-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rc-card { display: block; position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 16/11; background: var(--panel); }
+.rc-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.rc-card:hover img { transform: scale(1.04); }
+.rc-card-info { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px; display: flex; flex-direction: column; gap: 4px; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); color: #fff; }
+.rc-card-cat { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+.rc-card-title { font-size: 20px; }
+
 /* ---------- Responsive (compartido) ------------------------------------ */
 @media (max-width: 900px) {
   .rc { --pad: 22px; }
+  .rc-cards { grid-template-columns: 1fr; }
   .rc-nav-links { display: none; }
   .rc-marquee-item { width: 260px; height: 340px; }
   .rc-foot-grid { grid-template-columns: 1fr; }

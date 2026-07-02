@@ -40,13 +40,6 @@
 /* ---------- S5 · CASOS (grid + marquee) ------------------------------- */
 .rc-projects { padding: 50px var(--pad) 20px; border-top: 1px solid var(--line); }
 .rc-projects-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 28px; }
-.rc-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.rc-card { display: block; position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 16/11; background: var(--panel); }
-.rc-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.rc-card:hover img { transform: scale(1.04); }
-.rc-card-info { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px; display: flex; flex-direction: column; gap: 4px; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); color: #fff; }
-.rc-card-cat { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
-.rc-card-title { font-size: 20px; }
 
 /* ---------- S6 · RESULTADOS (métricas count-up) ---------------------- */
 .rc-results { padding: 80px var(--pad); border-top: 1px solid var(--line); }
@@ -78,7 +71,6 @@
 
 /* ---------- Responsive (home) ------------------------------------------ */
 @media (max-width: 900px) {
-  .rc-cards { grid-template-columns: 1fr; }
   .rc-core-grid { grid-template-columns: 1fr 1fr; }
   .rc-results-grid { grid-template-columns: 1fr; }
   .rc-projects-head { flex-direction: column; align-items: flex-start; }

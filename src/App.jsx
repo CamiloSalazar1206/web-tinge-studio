@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import WebflowPage from './components/WebflowPage.jsx'
 import LanguageToggle from './components/LanguageToggle.jsx'
 import { useI18n } from './i18n/index.jsx'
@@ -16,6 +16,7 @@ import LandingDemoV2 from './pages/legacy/LandingDemoV2.jsx'
 import HomeV3 from './pages/v3/Home.jsx'
 import CaseStudyV3 from './pages/v3/CaseStudy.jsx'
 import ContactV3 from './pages/v3/Contact.jsx'
+import ProjectsV3 from './pages/v3/Projects.jsx'
 
 import checkoutHtml from './pages/raw/checkout.html?raw'
 import orderConfirmationHtml from './pages/raw/order-confirmation.html?raw'
@@ -26,10 +27,16 @@ import detailSkuHtml from './pages/raw/detail_sku.html?raw'
 import error401Html from './pages/raw/401.html?raw'
 import error404Html from './pages/raw/404.html?raw'
 
+// Redirect del detalle Webflow viejo al caso nuevo (misma slug).
+function RedirectProject() {
+  const { slug } = useParams()
+  return <Navigate to={`/proyecto/${slug}`} replace />
+}
+
 // El toggle de idioma (widget global de Webflow) no aplica al preview v3.
 function GlobalLanguageToggle() {
   const { pathname } = useLocation()
-  const v3 = pathname === '/' || pathname === '/contact' ||
+  const v3 = pathname === '/' || pathname === '/contact' || pathname === '/work' ||
     pathname.startsWith('/ejemplo') || pathname.startsWith('/proyecto')
   if (v3) return null
   return <LanguageToggle />
@@ -43,11 +50,14 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomeV3 />} />
         <Route path="/home-old" element={<HomePage />} />
-        <Route path="/work" element={<WorkPage />} />
+        <Route path="/work" element={<ProjectsV3 />} />
+        <Route path="/proyectos" element={<ProjectsV3 />} />
+        <Route path="/work-old" element={<WorkPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/blog-1" element={<BlogPage />} />
         <Route path="/blog/category/:slug" element={<BlogPage />} />
-        <Route path="/project/:slug" element={<ProjectDetailPage />} />
+        <Route path="/project/:slug" element={<RedirectProject />} />
+        <Route path="/project-old/:slug" element={<ProjectDetailPage />} />
         <Route path="/blog/:slug" element={<BlogDetailPage />} />
         <Route path="/product/:slug" element={<ProductDetailPage />} />
 
