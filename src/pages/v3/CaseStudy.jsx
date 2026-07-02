@@ -6,6 +6,8 @@ import Reveal from '../../components/v3/Reveal.jsx'
 import RcNav from '../../components/v3/RcNav.jsx'
 import RcFooter from '../../components/v3/RcFooter.jsx'
 import RcMarquee from '../../components/v3/RcMarquee.jsx'
+import { CALENDAR_URL, waLink } from '../../lib/contact.js'
+import { WhatsAppIcon, CalendarIcon, WaFloat } from '../../components/v3/Cta.jsx'
 import '../../styles/v3/base.css'
 import '../../styles/v3/case.css'
 
@@ -145,6 +147,9 @@ export default function CaseStudyV3() {
   const story = caso.story || []
   const embed = autoplayEmbed(toEmbedUrl(caso.video || ''))
 
+  // WhatsApp con mensaje personalizado por caso.
+  const waText = `Hola Tinge 👋 Vi el caso de ${caso.client} y me gustaría conversar con ustedes.`
+
   // Todas las piezas en un solo stream. Regla: los videos van primero,
   // incluido el embed de Vimeo/YouTube.
   const media = [
@@ -238,7 +243,12 @@ export default function CaseStudyV3() {
             )}
 
             <div className="rc-c2-cta">
-              <Link to="/contact" className="rc-btn-blue">Hablemos →</Link>
+              <a href={waLink(waText)} target="_blank" rel="noreferrer" className="rc-btn-wa">
+                <WhatsAppIcon /> WhatsApp
+              </a>
+              <a href={CALENDAR_URL} target="_blank" rel="noreferrer" className="rc-btn-cal">
+                <CalendarIcon /> Agendar reunión
+              </a>
             </div>
           </Reveal>
         </aside>
@@ -278,6 +288,8 @@ export default function CaseStudyV3() {
       <RcMarquee items={carousel} ariaLabel="Más proyectos" />
 
       <RcFooter base="/" />
+
+      <WaFloat text={waText} />
     </div>
   )
 }
