@@ -119,7 +119,7 @@ export default function HomeV3() {
         <div className="rc-cards rc-cards-6">
           {grid.map((p, i) => (
             <Reveal key={p.slug || i} delay={(i % 3) * 0.08}>
-              <Link to={`/proyecto-v3/${p.slug}`} className="rc-card">
+              <Link to={`/proyecto/${p.slug}`} className="rc-card">
                 <img src={p.images?.[0]} alt={p.name} loading="lazy" />
                 <div className="rc-card-info">
                   <span className="rc-card-cat">{p.category || 'Brand Identity'}</span>

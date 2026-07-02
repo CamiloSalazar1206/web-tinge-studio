@@ -6,11 +6,13 @@ Actualizado: julio 2026
 
 | Ruta | Página | Estado |
 |---|---|---|
-| `/` | Home actual (Webflow reskineada) | producción |
-| `/ejemplo-v3` | **Home nueva (v3)** — la propuesta en curso | preview |
-| `/proyecto-v3/:slug` | **Página de caso (v3)** | preview |
+| `/` | **Home (v3)** — el sitio nuevo | producción |
+| `/proyecto/:slug` | **Página de caso (v3)** | producción |
+| `/contact` | **Contacto (v3)** — form a Netlify Forms | producción |
+| `/ejemplo-v3`, `/proyecto-v3/:slug` | alias de las anteriores (links viejos) | alias |
+| `/home-old`, `/contact-old` | versiones Webflow anteriores (respaldo) | backup |
+| `/work`, `/about`, `/blog-1`, `/project/:slug`… | páginas Webflow | producción |
 | `/ejemplo`, `/ejemplo-v2` | pruebas de diseño viejas | legacy |
-| `/work`, `/about`, `/contact`, `/blog-1`, `/project/:slug`… | páginas Webflow | producción |
 
 ## `src/`
 

@@ -11,7 +11,7 @@ export default function RcMarquee({ items = [], ariaLabel = 'Proyectos' }) {
         <div className="rc-marquee-track">
           {[...list, ...list].map((it, i) => (
             <Link
-              to={`/proyecto-v3/${it.slug}`}
+              to={`/proyecto/${it.slug}`}
               className="rc-marquee-item"
               key={`m${i}`}
               aria-hidden={i >= list.length}

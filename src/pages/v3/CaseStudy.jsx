@@ -119,12 +119,12 @@ export default function CaseStudyV3() {
   if (!caso) {
     return (
       <div className="rc rc-proj">
-        <RcNav base="/ejemplo-v3" />
+        <RcNav base="/" />
         <section className="rc-proj-missing">
           <h1 className="rc-display">Proyecto no encontrado.</h1>
-          <Link to="/ejemplo-v3#casos" className="rc-btn-outline">Ver todos los casos</Link>
+          <Link to="/#casos" className="rc-btn-outline">Ver todos los casos</Link>
         </section>
-        <RcFooter base="/ejemplo-v3" />
+        <RcFooter base="/" />
       </div>
     )
   }
@@ -159,7 +159,7 @@ export default function CaseStudyV3() {
 
   return (
     <div className="rc rc-proj">
-      <RcNav base="/ejemplo-v3" />
+      <RcNav base="/" />
 
       {/* Dos columnas: piezas (grande) | info sticky (chica) */}
       <div className="rc-c2">
@@ -278,12 +278,12 @@ export default function CaseStudyV3() {
       <section className="rc-proj-more">
         <div className="rc-proj-more-head">
           <span className="rc-eyebrow">Más proyectos</span>
-          <Link to="/ejemplo-v3#casos" className="rc-btn-outline">Ver todos los casos</Link>
+          <Link to="/#casos" className="rc-btn-outline">Ver todos los casos</Link>
         </div>
       </section>
       <RcMarquee items={carousel} ariaLabel="Más proyectos" />
 
-      <RcFooter base="/ejemplo-v3" />
+      <RcFooter base="/" />
     </div>
   )
 }

@@ -7,7 +7,7 @@ export default function RcNav({ base = '' }) {
   return (
     <header className="rc-nav-wrap">
       <div className="rc-nav">
-        <Link to="/ejemplo-v3" className="rc-logo-link" aria-label="Tinge — inicio">
+        <Link to="/" className="rc-logo-link" aria-label="Tinge — inicio">
           <img className="rc-logo" src="/images/tinge_.png" alt="Tinge" width="514" height="153" />
         </Link>
         <nav className="rc-nav-links">
