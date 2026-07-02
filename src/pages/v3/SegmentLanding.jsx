@@ -252,8 +252,7 @@ export default function SegmentLanding({ segment }) {
                   <p className="rc-bento-quote-text">{q.text}</p>
                 </div>
                 <div className="rc-bento-quote-foot">
-                  <div className="rc-bento-quote-name">{q.name}</div>
-                  <div className="rc-bento-quote-role">{q.role}</div>
+                  <div className="rc-bento-quote-name">{q.role}</div>
                   <div className="rc-bento-quote-co">{q.company}</div>
                 </div>
               </Reveal>

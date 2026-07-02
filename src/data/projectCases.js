@@ -52,19 +52,16 @@ export const projectCases = {
     quotes: [
       {
         text: 'Es que no te puedo explicar lo útil que es para nosotros tener esa Web. Ya desde el vamos el Brand les quedó increíble. Y esto es un extra que no esperábamos. Definitivamente subieron mucho la vara.',
-        name: 'Sergio Laguzzi',
         role: 'Art Manager | Basic Linear Channels (BLC)',
         company: 'Warner Bros. Discovery',
       },
       {
         text: 'Nos entregaron en tiempo récord algo que llevábamos meses intentando resolver internamente. El equipo adoptó la herramienta desde el primer día.',
-        name: 'Nico Sarsoti',
         role: 'Art Director',
         company: 'Warner Bros. Discovery',
       },
       {
         text: 'O nível de detalhe e a velocidade com que resolveram tudo foi impressionante. Nos deixaram um sistema que realmente funciona no dia a dia.',
-        name: 'Thais Vieira',
         role: 'Production Manager | Creative Services',
         company: 'Warner Bros. Discovery',
       },
@@ -116,13 +113,11 @@ export const projectCases = {
     quotes: [
       {
         text: 'Soy cero fan del contenido con IA, pero esto me pareció demasiado wow. Toman las producciones que ya tenemos y las potencian: nuevas vistas, movimiento, animación. Funciona perfecto para cuando querés impulsar algo sin el presupuesto de una producción completa.',
-        name: 'Sara Parra',
         role: 'Brand Manager',
         company: 'Grupo Bimbo',
       },
       {
         text: 'Teníamos contenido acumulado que no estábamos aprovechando. Con el sistema que nos armaron, hoy producimos el doble de piezas en la mitad del tiempo, sin perder el estándar que la marca necesita.',
-        name: 'Natalia Carrillo',
         role: 'Gerente de Categoría | Baked Goods',
         company: 'Grupo Bimbo',
       },
