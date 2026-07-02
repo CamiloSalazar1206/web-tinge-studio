@@ -2,6 +2,17 @@
 <html lang="es" data-wf-page="65dbf048dfd69f5cab7a701a" data-wf-site="65dbf048dfd69f5cab7a6fc2">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Y605DSRM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-S4Y605DSRM");
+    </script>
     <title>Tinge Studio</title>
     <meta content="Tinge Studio" property="og:title" />
     <meta content="Tinge Studio" property="twitter:title" />
@@ -10,6 +21,7 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/webflow.css" />
     <link rel="stylesheet" href="/css/tinge-02.webflow.css" />
+    <link rel="stylesheet" href="/css/tinge-brand.css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -27,28 +39,8 @@
     </script>
     <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="/images/webclip.png" rel="apple-touch-icon" />
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-WCDJK6ZN");
-    </script>
   </head>
   <body>
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WCDJK6ZN"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript>
     <div id="root"></div>
     <form name="Contact" method="POST" data-netlify="true" hidden>
       <input type="hidden" name="form-name" value="Contact" />

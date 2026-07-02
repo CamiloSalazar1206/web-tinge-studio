@@ -1,0 +1,88 @@
+/* =========================================================================
+   TINGE v3 · HOME — hero, método CORE, casos, resultados y cierre.
+   Requiere base.css.
+   ========================================================================= */
+/* ---------- S1 · HERO ------------------------------------------------- */
+.rc-hero { position: relative; height: 100vh; min-height: 600px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.rc-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.rc-hero-veil {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 80% at 50% 50%, rgba(8,8,8,0.35), rgba(8,8,8,0.72)),
+    linear-gradient(to bottom, rgba(8,8,8,0.6), rgba(8,8,8,0.45) 45%, rgba(8,8,8,0.82));
+}
+.rc-hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 22px; max-width: 1200px; padding: 0 24px; text-align: center; }
+.rc-hero-title { color: #fff; font-size: clamp(26px, 4.6vw, 62px); line-height: 1.02; white-space: nowrap; }
+.rc-hero-sub { color: rgba(255,255,255,0.8); font-size: clamp(14px, 1.2vw, 16px); line-height: 1.5; max-width: 44ch; }
+.rc-scroll { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; color: #fff; font-size: 22px; opacity: 0.7; }
+
+/* ---------- S2 · EL MÉTODO (2 columnas: tesis | CORE) ----------------- */
+.rc-method { padding: 56px var(--pad); border-top: 1px solid var(--line); }
+.rc-method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; max-width: 1160px; margin: 0 auto; }
+.rc-method-head { max-width: 540px; }
+.rc-method-thesis { font-size: clamp(24px, 2.6vw, 40px); margin-bottom: 16px; }
+.rc-method-intro { font-size: clamp(15px, 1.4vw, 18px); line-height: 1.55; color: var(--muted); max-width: 44ch; }
+
+/* CORE — secuencia conectada C→O→R→E (columna derecha) */
+.rc-core-label { display: block; font-family: 'Klein Condensed', 'Inter Tight', sans-serif; font-weight: 800; color: var(--blue); font-size: clamp(17px, 1.6vw, 22px); letter-spacing: 0.16em; margin-bottom: 20px; }
+.rc-core-list { position: relative; display: flex; flex-direction: column; }
+/* riel vertical: une los pasos como un método, no 4 items sueltos */
+.rc-core-list::before {
+  content: ''; position: absolute; left: 5px; top: 20px; bottom: 28px;
+  width: 2px; background: linear-gradient(var(--blue), rgba(0, 85, 255, 0.28));
+}
+.rc-core-row { position: relative; display: grid; grid-template-columns: 12px 42px 1fr; gap: 16px; align-items: start; padding: 13px 0; }
+.rc-core-node { width: 12px; height: 12px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px var(--bg); margin-top: 6px; }
+.rc-core-k { font-size: clamp(24px, 2vw, 30px); color: var(--blue); line-height: 1; letter-spacing: 0.01em; }
+.rc-core-title { font-size: 18px; line-height: 1.05; }
+.rc-core-desc { font-size: 14px; line-height: 1.5; color: var(--muted); margin-top: 4px; }
+
+/* ---------- S5 · CASOS (grid + marquee) ------------------------------- */
+.rc-projects { padding: 50px var(--pad) 20px; border-top: 1px solid var(--line); }
+.rc-projects-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 28px; }
+.rc-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rc-card { display: block; position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 16/11; background: var(--panel); }
+.rc-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.rc-card:hover img { transform: scale(1.04); }
+.rc-card-info { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px; display: flex; flex-direction: column; gap: 4px; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); color: #fff; }
+.rc-card-cat { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+.rc-card-title { font-size: 20px; }
+
+/* ---------- S6 · RESULTADOS (métricas count-up) ---------------------- */
+.rc-results { padding: 80px var(--pad); border-top: 1px solid var(--line); }
+.rc-results-head { margin-bottom: 36px; }
+.rc-results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.rc-result { border: 1px solid var(--line); border-radius: 18px; padding: 32px; display: flex; flex-direction: column; }
+.rc-result-brand { font-size: 19px; margin-bottom: 8px; }
+.rc-result-desc { font-size: 14px; line-height: 1.5; color: var(--muted); }
+.rc-result-metrics { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 16px; }
+.rc-result-metric { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.rc-result-num { font-size: clamp(28px, 2.8vw, 40px); color: var(--blue); line-height: 1; letter-spacing: 0.01em; }
+.rc-result-lbl { font-size: 13px; color: var(--muted); }
+
+/* ---------- SECCIÓN FINAL — cierre + CTA en una sola ------------------ */
+/* Cierre simple, humano e inclusivo. Los anillos concéntricos quedan de
+   fondo (idea de "construir / crecer") detrás del llamado centrado. */
+.rc-final { position: relative; overflow: hidden; text-align: center; padding: 104px var(--pad); border-top: 1px solid var(--line); }
+.rc-rings { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.rc-rings span { position: absolute; border: 1px solid rgba(0, 85, 255, 0.4); border-radius: 50%; }
+.rc-rings span:nth-child(1) { width: 320px; height: 320px; }
+.rc-rings span:nth-child(2) { width: 520px; height: 520px; }
+.rc-rings span:nth-child(3) { width: 740px; height: 740px; }
+.rc-final-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.rc-final-title { font-size: clamp(28px, 3.4vw, 48px); max-width: 18ch; }
+.rc-final-text { font-size: clamp(17px, 1.7vw, 22px); color: var(--ink); }
+.rc-final-actions { display: flex; align-items: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; justify-content: center; }
+.rc-final-mail { color: var(--muted); font-size: 15px; }
+.rc-final-mail:hover { color: var(--ink); }
+
+/* ---------- Responsive (home) ------------------------------------------ */
+@media (max-width: 900px) {
+  .rc-cards { grid-template-columns: 1fr; }
+  .rc-core-grid { grid-template-columns: 1fr 1fr; }
+  .rc-results-grid { grid-template-columns: 1fr; }
+  .rc-projects-head { flex-direction: column; align-items: flex-start; }
+  .rc-hero-title { white-space: normal; font-size: clamp(30px, 8vw, 42px); line-height: 1.05; }
+  .rc-method-grid { grid-template-columns: 1fr; gap: 40px; }
+  .rc-method, .rc-projects, .rc-results, .rc-final { padding-top: 80px; padding-bottom: 80px; }
+}

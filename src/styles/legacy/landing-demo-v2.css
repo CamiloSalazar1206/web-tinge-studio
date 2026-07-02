@@ -1,0 +1,168 @@
+/* =========================================================================
+   Landing de ejemplo v2 (/ejemplo-v2) — estructura basada en athleticsnyc.com
+   (editorial, oscuro, display serif ligero, etiquetas eyebrow, especialidades
+   A/B/C/D, tarjetas de trabajo con inclinación 3D, hero en video), en la marca
+   Tinge (azul #0055FF sobre negro). Acotado bajo .av.
+   ========================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap');
+
+.av {
+  --blue: #0055ff;
+  --bg: #0d0d0d;
+  --white: #f2f0eb;
+  --muted: #8a8a8a;
+  --line: rgba(255, 255, 255, 0.14);
+  --pad: 56px;
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Klein Text', 'Söhne', Helvetica, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+.av *, .av *::before, .av *::after { box-sizing: border-box; }
+.av p { margin: 0; }
+.av a { color: inherit; text-decoration: none; }
+.av img { display: block; max-width: 100%; }
+/* Force the editorial serif — the global brand CSS sets h1/h2/h3 to Klein
+   Condensed uppercase with !important, so we override with equal weight. */
+.av .av-serif,
+.av h1.av-hero-title,
+.av h2.av-h2,
+.av h2.av-principles-title,
+.av h2.av-foot-title,
+.av h3.av-case-brand {
+  font-family: var(--serif) !important;
+  font-weight: 300 !important;
+  text-transform: none !important;
+  letter-spacing: -0.01em;
+}
+.av em { font-style: italic; }
+
+/* ---------- Eyebrow --------------------------------------------------- */
+.av-eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin: 0 0 40px; }
+
+/* ---------- NAV ------------------------------------------------------- */
+.av-nav {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 30;
+  display: flex; align-items: center; justify-content: space-between; padding: 24px var(--pad);
+}
+.av-logo { font-family: var(--serif); font-weight: 400; font-size: 26px; }
+.av-logo-dot { color: var(--blue); }
+.av-nav-links { display: flex; gap: 28px; }
+.av-nav-links a { font-size: 14px; color: var(--white); opacity: 0.85; transition: opacity .2s; }
+.av-nav-links a:hover { opacity: 0.5; }
+.av-nav-toggle { display: none; background: none; border: 0; color: var(--white); font-size: 14px; font-family: inherit; cursor: pointer; }
+
+/* ---------- HERO ------------------------------------------------------ */
+.av-hero { position: relative; height: 100vh; min-height: 620px; overflow: hidden; display: flex; }
+.av-hero-media { position: absolute; inset: 0; }
+.av-hero-media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.3) contrast(1.05); }
+.av-hero-veil { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,13,13,0.92), rgba(13,13,13,0.45) 55%, rgba(13,13,13,0.6)); }
+.av-reel {
+  position: absolute; top: 96px; left: var(--pad); z-index: 3;
+  background: var(--blue); color: #fff; border: 0; border-radius: 999px; padding: 12px 22px;
+  font-size: 14px; font-family: inherit; cursor: pointer;
+}
+.av-hero-title {
+  position: relative; z-index: 3; align-self: flex-end; margin: 0; padding: var(--pad);
+  max-width: 20ch; font-family: var(--serif); font-weight: 300; font-size: clamp(38px, 5.6vw, 92px);
+  line-height: 1.02; letter-spacing: -0.02em;
+}
+.av-hero-title em { color: var(--white); }
+
+/* ---------- BLOCKS ---------------------------------------------------- */
+.av-block { padding: 100px var(--pad); border-top: 1px solid var(--line); }
+.av-block-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start; }
+.av-h2 { font-size: clamp(28px, 3.4vw, 50px); line-height: 1.08; margin: 0; }
+.av-block-copy { display: flex; flex-direction: column; gap: 20px; padding-top: 10px; }
+.av-block-copy p { font-size: 16px; line-height: 1.6; color: rgba(242,240,235,0.7); }
+
+/* ---------- SPECIALTIES ----------------------------------------------- */
+.av-spec { list-style: none; margin: 0; padding: 0; }
+.av-spec-row { display: flex; align-items: baseline; gap: 40px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.av-spec-k { font-size: 14px; color: var(--muted); width: 1.5ch; flex: none; }
+.av-spec-label { font-size: clamp(34px, 5.5vw, 84px); line-height: 1.1; }
+.av-spec-row:hover .av-spec-label { color: var(--blue); }
+
+/* ---------- CORE ------------------------------------------------------ */
+.av-core { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 70px; }
+.av-core-item { border-top: 1px solid var(--line); padding-top: 22px; }
+.av-core-k { font-family: var(--serif); font-weight: 300; font-size: 46px; color: var(--blue); display: block; margin-bottom: 18px; }
+.av-core-title { font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 8px; }
+.av-core-desc { font-size: 14px; line-height: 1.55; color: rgba(242,240,235,0.6); }
+
+/* ---------- WORK (3D tilt) -------------------------------------------- */
+.av-work { padding: 100px var(--pad) 90px; border-top: 1px solid var(--line); }
+.av-work-eyebrow { margin-bottom: 0; }
+.av-work-list { perspective: 2000px; }
+.av-work-item { display: block; margin: 90px 0; }
+.av-work-item.left { padding-right: 34%; }
+.av-work-item.right { padding-left: 34%; }
+.av-work-card {
+  aspect-ratio: 16/9; border-radius: 6px; overflow: hidden; background: #1a1a1a;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.5); transition: transform .6s cubic-bezier(0.22,1,0.36,1);
+  transform-style: preserve-3d;
+}
+.av-work-item.left .av-work-card { transform: rotateY(18deg); transform-origin: left center; }
+.av-work-item.right .av-work-card { transform: rotateY(-18deg); transform-origin: right center; }
+.av-work-item:hover .av-work-card { transform: rotateY(0deg); }
+.av-work-card img { width: 100%; height: 100%; object-fit: cover; }
+.av-work-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 22px; }
+.av-work-item.right .av-work-meta { flex-direction: row-reverse; text-align: right; }
+.av-work-name { font-size: clamp(26px, 3vw, 44px); }
+.av-work-tag { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.av-center { text-align: center; margin-top: 40px; }
+
+/* ---------- Pills / links --------------------------------------------- */
+.av-pill { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 15px 40px; font-size: 14px; transition: all .25s; }
+.av-pill:hover { border-color: var(--blue); color: var(--blue); }
+.av-pill-blue { background: var(--blue); border-color: var(--blue); color: #fff; }
+.av-pill-blue:hover { background: #0044cc; color: #fff; }
+.av-link { font-size: 15px; color: var(--blue); }
+
+/* ---------- PRINCIPLES ------------------------------------------------ */
+.av-principles-title { font-size: clamp(40px, 6vw, 92px); line-height: 1.02; margin: 0 0 40px; }
+.av-principles-copy { max-width: 46ch; }
+
+/* ---------- CLIENTS --------------------------------------------------- */
+.av-clients { padding: 70px var(--pad); border-top: 1px solid var(--line); text-align: center; }
+.av-clients .av-eyebrow { margin-bottom: 40px; }
+.av-clients-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 60px; }
+.av-clients-row img { height: 26px; width: auto; opacity: 0.5; filter: grayscale(1); transition: opacity .2s; }
+.av-clients-row img:hover { opacity: 1; filter: none; }
+
+/* ---------- CASES ----------------------------------------------------- */
+.av-cases { padding: 100px var(--pad); border-top: 1px solid var(--line); }
+.av-cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.av-case { display: flex; flex-direction: column; }
+.av-case-thumb { aspect-ratio: 4/3; border-radius: 8px; }
+.av-case-body { padding-top: 22px; }
+.av-case-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.av-case-brand { font-size: 30px; margin: 10px 0 12px; }
+.av-case-metric { font-size: 15px; line-height: 1.5; color: var(--blue); }
+
+/* ---------- FOOTER ---------------------------------------------------- */
+.av-foot { padding: 100px var(--pad) 40px; border-top: 1px solid var(--line); }
+.av-foot-cta { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding-bottom: 80px; }
+.av-foot-title { font-size: clamp(34px, 5vw, 76px); line-height: 1.02; margin: 0; }
+.av-foot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 40px 0; border-top: 1px solid var(--line); }
+.av-foot-col { display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: rgba(242,240,235,0.7); }
+.av-foot-col a:hover { color: var(--white); }
+.av-foot-word { font-family: var(--serif); font-weight: 300; font-size: clamp(80px, 20vw, 300px); line-height: 0.9; letter-spacing: -0.02em; margin-top: 40px; }
+
+/* ---------- Responsive ------------------------------------------------ */
+@media (max-width: 900px) {
+  .av { --pad: 22px; }
+  .av-nav-links { display: none; }
+  .av-nav-links.open { display: flex; position: absolute; top: 70px; left: 0; right: 0; flex-direction: column; gap: 16px; background: var(--bg); padding: 22px; }
+  .av-nav-toggle { display: block; }
+  .av-block-grid { grid-template-columns: 1fr; gap: 24px; }
+  .av-core { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .av-work-item.left, .av-work-item.right { padding: 0; }
+  .av-work-item.left .av-work-card, .av-work-item.right .av-work-card { transform: none; }
+  .av-work-item.right .av-work-meta { flex-direction: row; text-align: left; }
+  .av-cases-grid { grid-template-columns: 1fr; }
+  .av-foot-grid { grid-template-columns: 1fr; }
+  .av-clients-row { gap: 32px; }
+}

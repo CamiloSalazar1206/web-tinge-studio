@@ -1,0 +1,183 @@
+/* =========================================================================
+   Tinge Brand Override Layer
+   Re-skins the Webflow export to the brand identity defined in
+   "Presentacion-tinge-servicios / icp-hub" (Klein type + blue accent).
+   Loaded AFTER the Webflow CSS so it wins on cascade.
+   Structure/content untouched — this only changes the visual skin.
+   ========================================================================= */
+
+/* ---------- Klein typeface (Monotype licensed) ------------------------- */
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('/fonts/KleinCondensedExtrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Condensed';
+  src: url('/fonts/KleinCondensedExtraboldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('/fonts/KleinBook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein Text';
+  src: url('/fonts/KleinBookItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('/fonts/KleinExtralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Klein';
+  src: url('/fonts/KleinExtralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- Brand palette --------------------------------------------- */
+/* Remaps the existing Webflow CSS variables so every element that already
+   references them picks up the new colors automatically. */
+:root {
+  --black: #080808;          /* pure near-black background */
+  --white: #f2f0eb;          /* warm off-white text       */
+  --black-second: #111111;   /* raised surfaces           */
+  --dark-grey: #888888;      /* muted secondary text      */
+  --honeydew-section: #1a1a1a;
+  --alice-blue: #101010;
+
+  /* New brand accents (additive) */
+  --blue: #0055ff;
+  --blue-dim: #0044cc;
+  --gray: #888888;
+}
+
+/* ---------- Base typography ------------------------------------------- */
+body {
+  font-family: 'Klein Text', 'Inter Tight', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Anything that hard-codes the old body font inherits Klein Text instead. */
+[class] {
+  font-family: inherit;
+}
+
+/* ---------- Display / headline type ----------------------------------- */
+/* Klein Condensed Extrabold, uppercase — the signature brand headline. */
+h1, h2, h3,
+.display-1,
+.display-2,
+.subhead,
+.subhead.x2,
+.heading,
+.option-title {
+  font-family: 'Klein Condensed', 'Inter Tight', sans-serif !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 0.98;
+}
+
+/* Subheads read as supporting copy — keep them condensed but not shouty. */
+.subhead,
+.subhead.x2,
+.subhead.smaller {
+  text-transform: none;
+  font-weight: 800 !important;
+  line-height: 1.15;
+}
+
+/* Project name rotator: condensed display, keep its own casing. */
+.text-rotator {
+  font-family: 'Klein Condensed', 'Inter Tight', sans-serif !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Small uppercase labels get wide tracking, like the reference nav. */
+.nav-link,
+.footer-link,
+.play-text,
+.button-line-main div {
+  font-family: 'Klein Text', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+
+/* ---------- Accent color ---------------------------------------------- */
+/* Electric blue is the single brand accent (links, hovers, highlights). */
+a:hover,
+.nav-link:hover,
+.footer-link:hover {
+  color: var(--blue);
+}
+
+/* Buttons / interactive fills lean on the blue accent. */
+.button:hover,
+.primary-button:hover,
+.button-line-main:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+::selection {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ---------- Solid black brand background ------------------------------ */
+/* The Webflow export paints the hero, footer and colored sections with
+   purple/blue photo backgrounds (hero-01.png / hero-3.jpg / hero-2.jpg).
+   Force solid brand black so the whole site sits on #080808. */
+.hero,
+.footer,
+.section.with-color {
+  background-image: none !important;
+  background-color: var(--black) !important;
+}
+
+/* Purple/blue decorative blobs floating over the hero — removed for a
+   clean black background. */
+.shape-1,
+.shape-2 {
+  display: none !important;
+}
+
+/* The gradient overlays fade through #0a0811 (a slightly purple near-black).
+   Repaint them with pure brand black so edges stay truly black. */
+.overlay-bottom {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(8, 8, 8, 0),
+    rgba(8, 8, 8, 0.87) 57%,
+    var(--black)
+  ) !important;
+}
+.overlay-bottom.top {
+  background-image: linear-gradient(
+    to bottom,
+    var(--black),
+    rgba(8, 8, 8, 0.87) 43%,
+    rgba(8, 8, 8, 0)
+  ) !important;
+}
