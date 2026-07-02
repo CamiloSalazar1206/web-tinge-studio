@@ -33,15 +33,17 @@
 }
 @media (prefers-reduced-motion: reduce) { .rc-wa-float { animation: none; } }
 
-/* Resultados: diseño de tarjeta original, con tipos un punto más grandes */
-.rc-lp-results .rc-result { padding: 34px 32px 28px; }
-.rc-lp-results .rc-result-brand { font-size: 21px; margin-bottom: 10px; }
-.rc-lp-results .rc-result-desc { font-size: 15.5px; line-height: 1.65; }
-.rc-lp-results .rc-result-metrics { margin-top: 26px; padding-top: 22px; gap: 18px; }
-.rc-lp-results .rc-result-num { font-size: clamp(30px, 2.9vw, 44px); }
+/* Resultados: tarjeta original con tipos más grandes, sección compacta */
+.rc-lp-results { padding: 46px var(--pad) 40px; }
+.rc-lp-results .rc-results-head { margin-bottom: 26px; }
+.rc-lp-results .rc-result { padding: 26px 28px 22px; }
+.rc-lp-results .rc-result-brand { font-size: 21px; margin-bottom: 8px; }
+.rc-lp-results .rc-result-desc { font-size: 15.5px; line-height: 1.6; }
+.rc-lp-results .rc-result-metrics { margin-top: 18px; padding-top: 16px; gap: 12px; }
+.rc-lp-results .rc-result-num { font-size: clamp(28px, 2.7vw, 40px); }
 .rc-lp-results .rc-result-num.rc-result-num-sm { font-size: clamp(20px, 1.8vw, 26px); line-height: 1.2; }
 .rc-lp-results .rc-result-lbl { font-size: 14px; }
-.rc-result-link { margin-top: auto; padding-top: 24px; font-size: 15px; color: var(--blue); transition: opacity 0.2s; }
+.rc-result-link { margin-top: auto; padding-top: 16px; font-size: 15px; color: var(--blue); transition: opacity 0.2s; }
 .rc-result-link:hover { opacity: 0.75; color: var(--blue); }
 
 /* Sección de conversión */
