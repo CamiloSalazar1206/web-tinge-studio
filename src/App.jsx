@@ -13,6 +13,7 @@ import HomeV3 from './pages/v3/Home.jsx'
 import CaseStudyV3 from './pages/v3/CaseStudy.jsx'
 import ContactV3 from './pages/v3/Contact.jsx'
 import ProjectsV3 from './pages/v3/Projects.jsx'
+import SegmentLanding from './pages/v3/SegmentLanding.jsx'
 
 import error404Html from './pages/raw/404.html?raw'
 
@@ -33,6 +34,7 @@ function RedirectProject() {
 function GlobalLanguageToggle() {
   const { pathname } = useLocation()
   const v3 = pathname === '/' || pathname === '/contact' || pathname === '/work' ||
+    pathname === '/entretenimiento' || pathname === '/consumo-masivo' ||
     pathname.startsWith('/ejemplo') || pathname.startsWith('/proyecto')
   if (v3) return null
   return <LanguageToggle />
@@ -49,6 +51,8 @@ export default function App() {
         <Route path="/home-old" element={<HomePage />} />
         <Route path="/work" element={<ProjectsV3 />} />
         <Route path="/proyectos" element={<ProjectsV3 />} />
+        <Route path="/entretenimiento" element={<SegmentLanding segment="entretenimiento" />} />
+        <Route path="/consumo-masivo" element={<SegmentLanding segment="consumo-masivo" />} />
         <Route path="/work-old" element={<WorkPage />} />
         <Route path="/project/:slug" element={<RedirectProject />} />
         <Route path="/project-old/:slug" element={<ProjectDetailPage />} />
