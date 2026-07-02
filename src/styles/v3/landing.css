@@ -12,8 +12,9 @@
 .rc-lp-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 .rc-btn-wa { display: inline-flex; align-items: center; gap: 9px; background: #25d366; color: #06281a; padding: 14px 26px; border-radius: 30px; font-size: 14px; transition: background 0.2s; }
 .rc-btn-wa:hover { background: #1fba58; color: #06281a; }
-.rc-lp-quick { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 26px; }
-.rc-lp-quick .rc-btn-outline { padding: 12px 26px; }
+.rc-lp-quick { display: flex; flex-direction: column; align-items: stretch; gap: 12px; margin-top: 26px; width: fit-content; min-width: 300px; }
+.rc-lp-quick .rc-btn-wa, .rc-lp-quick .rc-btn-outline { justify-content: center; text-align: center; }
+.rc-lp-quick .rc-btn-outline { display: inline-flex; align-items: center; padding: 13px 26px; }
 
 /* Burbuja flotante de WhatsApp */
 .rc-wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); transition: transform 0.2s; }
