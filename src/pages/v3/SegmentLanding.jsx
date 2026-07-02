@@ -52,6 +52,7 @@ const SEGMENTS = {
     results: [
       {
         brand: 'Warner Channel TV',
+        slug: 'warner-channel',
         desc: 'Rebranding, identidad en movimiento y hub de assets para toda Latinoamérica.',
         metrics: [
           { num: '–80%', label: 'búsqueda de assets', color: '#A3FF12' },
@@ -60,6 +61,7 @@ const SEGMENTS = {
       },
       {
         brand: 'The Walt Disney Company',
+        slug: 'invasion-marvel',
         desc: 'Concepto y sistemas gráficos para Invasión Marvel, Sabatón y F1 Fox Premium.',
         metrics: [
           { num: '3', label: 'toolkits al aire', color: '#0055FF' },
@@ -67,6 +69,7 @@ const SEGMENTS = {
       },
       {
         brand: 'ESPN · Estudio.la',
+        slug: 'espn-scrum-mundial-2023',
         desc: 'Dirección de arte y animación para el Scrum Mundial de Rugby 2023.',
         metrics: [
           { text: 'Mundial de Rugby 2023', color: '#C084FC' },
@@ -89,6 +92,7 @@ const SEGMENTS = {
     results: [
       {
         brand: 'Bimbo · Vital',
+        slug: 'bimbo',
         desc: 'Concepto y sistema de producción con IA y curaduría humana, con el producto en el centro.',
         metrics: [
           { num: '–50%', label: 'tiempo de producción', color: '#A3FF12' },
@@ -97,6 +101,7 @@ const SEGMENTS = {
       },
       {
         brand: 'Bimbo · Artesano',
+        slug: 'artesano-eleva-tus-sentidos',
         desc: 'Campaña regional en Colombia, Ecuador y Centroamérica.',
         metrics: [
           { num: '+22 pts', label: 'Value SOM', color: '#0055FF' },
@@ -105,6 +110,7 @@ const SEGMENTS = {
       },
       {
         brand: 'Danone · Danet Shake',
+        slug: 'danet-shake',
         desc: 'Una idea de conexión en plena pandemia: cada compra lleva un mensaje personalizado.',
         metrics: [
           { num: '3', label: 'influencers de la juventud española', color: '#A3FF12' },
@@ -165,13 +171,14 @@ export default function SegmentLanding({ segment }) {
               <div className="rc-result-metrics">
                 {r.metrics.map((m, j) => (
                   <div className="rc-result-metric" key={j}>
-                    <span className="rc-result-num" style={{ color: m.color || 'var(--blue)' }}>
+                    <span className={`rc-result-num${m.text ? ' rc-result-num-sm' : ''}`} style={{ color: m.color || 'var(--blue)' }}>
                       {m.text || m.num}
                     </span>
                     {m.label && <span className="rc-result-lbl">{m.label}</span>}
                   </div>
                 ))}
               </div>
+              {r.slug && <Link to={`/proyecto/${r.slug}`} className="rc-result-link">Ver el caso →</Link>}
             </Reveal>
           ))}
         </div>

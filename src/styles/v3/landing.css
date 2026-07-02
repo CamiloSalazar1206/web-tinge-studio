@@ -33,6 +33,11 @@
 }
 @media (prefers-reduced-motion: reduce) { .rc-wa-float { animation: none; } }
 
+/* Tarjetas de resultados: dato-texto contenido y link al caso al pie */
+.rc-result-num-sm { font-size: clamp(19px, 1.7vw, 24px); line-height: 1.2; }
+.rc-result-link { margin-top: auto; padding-top: 22px; font-size: 14px; color: var(--blue); transition: opacity 0.2s; }
+.rc-result-link:hover { opacity: 0.75; color: var(--blue); }
+
 /* Sección de conversión */
 .rc-lp-form { padding: 90px var(--pad); border-top: 1px solid var(--line); }
 .rc-lp-form-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px 72px; align-items: start; max-width: 1200px; margin: 0 auto; }
