@@ -14,6 +14,9 @@
 /* Honeypot: fuera de pantalla (no display:none, algunos bots lo detectan) */
 .rc-hp { position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none; }
 
+/* CTAs directos: WhatsApp + agenda */
+.rc-contact-quick { display: flex; flex-direction: column; align-items: stretch; gap: 12px; margin-top: 30px; width: fit-content; min-width: 300px; }
+
 /* Formulario */
 .rc-contact-form { display: flex; flex-direction: column; gap: 18px; }
 .rc-contact-form label { display: flex; flex-direction: column; gap: 7px; }
