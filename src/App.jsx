@@ -18,9 +18,16 @@ import SegmentLanding from './pages/v3/SegmentLanding.jsx'
 import error404Html from './pages/raw/404.html?raw'
 
 // Cada cambio de ruta arranca arriba (React Router conserva el scroll).
+// Si la URL trae un #anchor, se respeta y se scrollea a esa sección.
 function ScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) { el.scrollIntoView(); return }
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
   return null
 }
 

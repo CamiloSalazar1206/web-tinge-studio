@@ -22,6 +22,16 @@ function WhatsAppIcon() {
     </svg>
   )
 }
+function CalendarIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+      <rect x="3.2" y="4.8" width="17.6" height="16" rx="2.5" />
+      <path d="M3.2 9.6h17.6M7.8 2.8v3.4M16.2 2.8v3.4" />
+      <path d="M8 13.5h2.2M8 17h2.2M13.8 13.5H16M13.8 17H16" strokeWidth="1.6" />
+    </svg>
+  )
+}
+
 const CORE = [
   { k: 'C', title: 'Criterio', desc: 'Decidir qué vale la pena crear.' },
   { k: 'O', title: 'Operación', desc: 'Alinear equipos bajo una misma lógica.' },
@@ -134,8 +144,8 @@ export default function SegmentLanding({ segment }) {
             <a href={waLink(cfg.whatsappText)} target="_blank" rel="noreferrer" className="rc-btn-wa">
               <WhatsAppIcon /> WhatsApp
             </a>
-            <a href={CALENDAR_URL} target="_blank" rel="noreferrer" className="rc-btn-light">
-              Agendar una reunión
+            <a href={CALENDAR_URL} target="_blank" rel="noreferrer" className="rc-btn-cal">
+              <CalendarIcon /> Agendar una reunión
             </a>
           </Reveal>
         </div>
@@ -252,8 +262,8 @@ export default function SegmentLanding({ segment }) {
               <a href={waLink(cfg.whatsappText)} target="_blank" rel="noreferrer" className="rc-btn-wa">
                 <WhatsAppIcon /> Escríbenos por WhatsApp
               </a>
-              <a href={CALENDAR_URL} target="_blank" rel="noreferrer" className="rc-btn-outline">
-                Agendar una reunión →
+              <a href={CALENDAR_URL} target="_blank" rel="noreferrer" className="rc-btn-cal">
+                <CalendarIcon /> Agendar una reunión
               </a>
             </div>
             <div className="rc-contact-meta">

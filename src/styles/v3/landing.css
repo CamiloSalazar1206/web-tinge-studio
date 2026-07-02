@@ -8,18 +8,30 @@
 .rc-lp-eyebrow { margin-bottom: 0; }
 .rc-lp-title { color: #fff; font-size: clamp(30px, 4.4vw, 60px); line-height: 1.0; }
 
-/* CTAs primarios: WhatsApp + agenda */
+/* CTAs primarios: WhatsApp (verde) + agenda (azul), mismo cuerpo */
 .rc-lp-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-.rc-btn-wa { display: inline-flex; align-items: center; gap: 9px; background: #25d366; color: #06281a; padding: 14px 26px; border-radius: 30px; font-size: 14px; transition: background 0.2s; }
-.rc-btn-wa:hover { background: #1fba58; color: #06281a; }
-.rc-lp-quick { display: flex; flex-direction: column; align-items: stretch; gap: 12px; margin-top: 26px; width: fit-content; min-width: 300px; }
-.rc-lp-quick .rc-btn-wa, .rc-lp-quick .rc-btn-outline { justify-content: center; text-align: center; }
-.rc-lp-quick .rc-btn-outline { display: inline-flex; align-items: center; padding: 13px 26px; }
+.rc-btn-wa, .rc-btn-cal {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px 28px; border-radius: 30px; font-size: 15px; line-height: 1;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.rc-btn-wa { background: #25d366; color: #fff; }
+.rc-btn-wa:hover { background: #1fc25c; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(37, 211, 102, 0.32); }
+.rc a.rc-btn-cal, .rc-btn-cal { background: var(--blue); color: #fff; }
+.rc a.rc-btn-cal:hover, .rc-btn-cal:hover { background: var(--blue-dim); color: #fff; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0, 85, 255, 0.35); }
+.rc-btn-wa svg, .rc-btn-cal svg { flex-shrink: 0; }
+.rc-lp-quick { display: flex; flex-direction: column; align-items: stretch; gap: 12px; margin-top: 26px; width: fit-content; min-width: 320px; }
 
-/* Burbuja flotante de WhatsApp */
-.rc-wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); transition: transform 0.2s; }
-.rc-wa-float:hover { transform: scale(1.08); color: #fff; }
-.rc-wa-float svg { width: 28px; height: 28px; }
+/* Burbuja flotante de WhatsApp (pulso sutil) */
+.rc-wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); transition: transform 0.2s; animation: rc-wa-pulse 3s ease-out infinite; }
+.rc-wa-float:hover { transform: scale(1.1); color: #fff; animation: none; }
+.rc-wa-float svg { width: 30px; height: 30px; }
+@keyframes rc-wa-pulse {
+  0% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.45); }
+  55% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .rc-wa-float { animation: none; } }
 
 /* Sección de conversión */
 .rc-lp-form { padding: 90px var(--pad); border-top: 1px solid var(--line); }
