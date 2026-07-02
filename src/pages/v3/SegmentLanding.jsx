@@ -39,14 +39,14 @@ const SEGMENTS = {
       },
       {
         brand: 'The Walt Disney Company',
-        desc: 'Toolkits de programa para Invasión Marvel, Sabatón y F1 Fox Premium.',
+        desc: 'Concepto y sistemas gráficos para Invasión Marvel, Sabatón y F1 Fox Premium.',
         metrics: [
           { num: '3', label: 'toolkits al aire', color: '#0055FF' },
         ],
       },
       {
         brand: 'ESPN · Estudio.la',
-        desc: 'Animación para la cobertura del Scrum Mundial de Rugby 2023.',
+        desc: 'Dirección de arte y animación para el Scrum Mundial de Rugby 2023.',
         metrics: [
           { text: 'Mundial de Rugby 2023', color: '#C084FC' },
         ],
@@ -67,7 +67,7 @@ const SEGMENTS = {
     results: [
       {
         brand: 'Bimbo · Vital',
-        desc: 'Sistema de producción con IA y curaduría humana sobre los assets que ya existían.',
+        desc: 'Concepto y sistema de producción con IA y curaduría humana, con el producto en el centro.',
         metrics: [
           { num: '–50%', label: 'tiempo de producción', color: '#A3FF12' },
           { num: '+40%', label: 'reutilización de contenido', color: '#FF6B9D' },
@@ -83,7 +83,7 @@ const SEGMENTS = {
       },
       {
         brand: 'Danone · Danet Shake',
-        desc: 'Comercial en plena pandemia con un mensaje personalizado en cada compra.',
+        desc: 'Una idea de conexión en plena pandemia: cada compra lleva un mensaje personalizado.',
         metrics: [
           { num: '3', label: 'influencers de la juventud española', color: '#A3FF12' },
         ],

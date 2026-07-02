@@ -87,11 +87,11 @@ export const projectCases = {
       },
       {
         label: 'La solución',
-        text: 'Producción que combina IA y curaduría humana sobre los assets que ya existían.',
+        text: 'Un concepto claro, el producto y la experiencia en el centro, y un sistema que combina IA con curaduría humana sobre los assets que ya existían.',
       },
     ],
     resultado: 'Producción IA + curaduría humana · –50% tiempos · Flujo profesional',
-    serviciosList: ['Diagnóstico de flujo', 'Integración de IA', 'Curaduría humana', 'Producción optimizada'],
+    serviciosList: ['Estrategia de contenido', 'Concepto creativo', 'Integración de IA', 'Curaduría humana', 'Producción optimizada'],
     logo: '/casos/bimbo-logo.png',
     cover: '/casos/bimbo-cover.jpg',
     pipeline: [
@@ -145,10 +145,10 @@ export const projectCases = {
       },
       {
         label: 'La solución',
-        text: 'Campaña y sistema de producción que mantuvieron la consistencia de marca en todo el despliegue regional.',
+        text: 'Un concepto sensorial, “Eleva tus sentidos”, convertido en campaña y sistema de producción consistentes en los tres mercados.',
       },
     ],
-    serviciosList: ['Campaña regional', 'Sistema de producción', 'Despliegue en 3 mercados'],
+    serviciosList: ['Concepto creativo', 'Campaña regional', 'Sistema de producción', 'Despliegue en 3 mercados'],
     metrics: [
       { num: '+22 pts', label: 'Value SOM', color: '#A3FF12' },
       { num: 'GBF 2022', label: 'Premio de la categoría', color: '#FF6B9D' },
@@ -178,10 +178,10 @@ export const projectCases = {
       },
       {
         label: 'La solución',
-        text: 'Un comercial con tres de los influencers más relevantes del momento, animación 3D y un mensaje personalizado con cada compra.',
+        text: 'Una idea de conexión: cada compra lleva un mensaje personalizado. La contamos con tres de los influencers más relevantes del momento y animación 3D.',
       },
     ],
-    serviciosList: ['Campaña', 'Publicidad dinámica', 'Animación 3D'],
+    serviciosList: ['Estrategia de campaña', 'Concepto creativo', 'Publicidad dinámica', 'Animación 3D'],
     metrics: [],
     video: 'https://www.youtube.com/watch?v=wQWO0d23WCI',
     visuals: [
@@ -194,15 +194,15 @@ export const projectCases = {
 
   'espn-scrum-mundial-2023': {
     slug: 'espn-scrum-mundial-2023',
-    tag: 'Animación',
+    tag: 'Dirección de arte + Animación',
     client: 'ESPN Scrum Mundial 2023',
     company: 'ESPN · Estudio.la',
     category: 'Animation',
     year: '2023',
     problema:
-      'Piezas de animación para la cobertura del Mundial de Rugby 2023 en ESPN.',
+      'Dirección de arte y animación para que la cobertura del Mundial de Rugby 2023 tuviera identidad propia en ESPN.',
     story: [],
-    serviciosList: ['Animación', 'Producción de contenido'],
+    serviciosList: ['Dirección de arte', 'Animación', 'Producción de contenido'],
     metrics: [],
     video: 'https://vimeo.com/926882287?share=copy',
     visuals: [
@@ -223,7 +223,7 @@ export const projectCases = {
     problema:
       'Una mezcla de estilos 3D y 2D para dar vida a la experiencia de la Fórmula 1 en FOX Premium, de la creatividad a la producción.',
     story: [],
-    serviciosList: ['Branding TV', 'Creatividad', 'Producción 3D'],
+    serviciosList: ['Concepto creativo', 'Branding TV', 'Producción 3D'],
     metrics: [],
     video: '',
     visuals: [
@@ -236,15 +236,15 @@ export const projectCases = {
 
   'f1-fox-premium-2': {
     slug: 'f1-fox-premium-2',
-    tag: 'Animación + Toolkit',
+    tag: 'Sistema gráfico + Animación',
     client: 'F1 Fox Premium, Toolkit',
     company: 'The Walt Disney Company',
     category: 'Animation',
     year: '2020',
     problema:
-      'Desarrollo del toolkit del programa F1 Fox Premium: las piezas listas para operar el día a día del canal.',
+      'El sistema gráfico del programa F1 Fox Premium: una identidad pensada para operar el día a día del canal sin perder fuerza.',
     story: [],
-    serviciosList: ['Animación', 'Toolkit de programa'],
+    serviciosList: ['Dirección de arte', 'Sistema gráfico', 'Animación'],
     metrics: [],
     video: 'https://vimeo.com/926867318',
     visuals: [
@@ -257,15 +257,15 @@ export const projectCases = {
 
   'invasion-marvel': {
     slug: 'invasion-marvel',
-    tag: 'Animación + Toolkit',
+    tag: 'Sistema gráfico + Animación',
     client: 'Invasión Marvel',
     company: 'The Walt Disney Company',
     category: 'Animation',
     year: '2020',
     problema:
-      'Desarrollo del toolkit del programa Invasión Marvel para The Walt Disney Company.',
+      'El sistema gráfico de Invasión Marvel: la fuerza de la franquicia traducida a un toolkit que opera el programa día a día.',
     story: [],
-    serviciosList: ['Animación', 'Toolkit de programa'],
+    serviciosList: ['Dirección de arte', 'Sistema gráfico', 'Animación'],
     metrics: [],
     video: 'https://vimeo.com/926862935?share=copy',
     visuals: [
@@ -278,15 +278,15 @@ export const projectCases = {
 
   sabaton: {
     slug: 'sabaton',
-    tag: 'Animación + Toolkit',
+    tag: 'Concepto + Sistema gráfico',
     client: 'Sabatón',
     company: 'The Walt Disney Company',
     category: 'Animation',
     year: '2023',
     problema:
-      'Toolkit para un segmento de Disney Channel: un maratón de tres horas que presentó varios programas.',
+      'Concepto y sistema gráfico para un maratón de tres horas en Disney Channel: varios programas conviviendo bajo una misma identidad.',
     story: [],
-    serviciosList: ['Animación', 'Toolkit de segmento'],
+    serviciosList: ['Concepto creativo', 'Sistema gráfico', 'Animación'],
     metrics: [],
     video: 'https://vimeo.com/926851198?share=copy',
     visuals: [
