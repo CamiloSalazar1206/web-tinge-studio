@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Reveal from '../../components/v3/Reveal.jsx'
 import RcNav from '../../components/v3/RcNav.jsx'
 import RcFooter from '../../components/v3/RcFooter.jsx'
@@ -10,11 +10,19 @@ import '../../styles/v3/contact.css'
 // index.html, name="Contact").
 export default function ContactV3() {
   const [status, setStatus] = useState('idle') // idle | sending | ok | error
+  const openedAt = useRef(0)
+  useEffect(() => { openedAt.current = Date.now() }, [])
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    setStatus('sending')
     const data = new FormData(e.target)
+    // Anti-spam: honeypot lleno o envío en <3s = bot. Se simula éxito para
+    // que no reintente, pero no se envía nada.
+    if (data.get('bot-field') || Date.now() - openedAt.current < 3000) {
+      setStatus('ok')
+      return
+    }
+    setStatus('sending')
     data.append('form-name', 'Contact')
     try {
       const res = await fetch('/', {
@@ -53,8 +61,15 @@ export default function ContactV3() {
               <p className="rc-contact-text">Gracias por escribirnos. Te contactamos muy pronto.</p>
             </div>
           ) : (
-            <form className="rc-contact-form" name="Contact" method="POST" data-netlify="true" onSubmit={onSubmit}>
+            <form className="rc-contact-form" name="Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={onSubmit}>
               <input type="hidden" name="form-name" value="Contact" />
+              {/* honeypot: invisible para humanos, irresistible para bots */}
+              <p className="rc-hp" aria-hidden="true">
+                <label>
+                  No llenar este campo
+                  <input type="text" name="bot-field" tabIndex={-1} autoComplete="off" />
+                </label>
+              </p>
               <label>
                 <span>Nombre</span>
                 <input type="text" name="nombre-completo" placeholder="Tu nombre" required />

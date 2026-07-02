@@ -11,6 +11,9 @@
 .rc-contact-meta a:hover { color: var(--blue); }
 .rc-contact-meta span { color: var(--muted); }
 
+/* Honeypot: fuera de pantalla (no display:none, algunos bots lo detectan) */
+.rc-hp { position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none; }
+
 /* Formulario */
 .rc-contact-form { display: flex; flex-direction: column; gap: 18px; }
 .rc-contact-form label { display: flex; flex-direction: column; gap: 7px; }
