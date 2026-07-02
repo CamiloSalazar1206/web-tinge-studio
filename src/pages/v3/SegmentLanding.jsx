@@ -11,6 +11,17 @@ import '../../styles/v3/landing.css'
 
 // Landings segmentadas para pauta (Meta): casos del segmento + método CORE +
 // form de conversión con `origen`. Una config por industria.
+// CTAs primarios: WhatsApp (con mensaje precargado por segmento) y agenda.
+const CALENDAR_URL = 'https://calendar.app.google/9Yp4LodhEX57QxDQ8'
+const waLink = (text) => `https://wa.me/573167224507?text=${encodeURIComponent(text)}`
+
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-3.1 4c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1 2.7c.1.2 1.8 2.8 4.4 3.9 2.2.9 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-1 1.2c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.5 8.2c-.2-.4-.4-.4-.6-.4Z" />
+    </svg>
+  )
+}
 const CORE = [
   { k: 'C', title: 'Criterio', desc: 'Decidir qué vale la pena crear.' },
   { k: 'O', title: 'Operación', desc: 'Alinear equipos bajo una misma lógica.' },
@@ -53,6 +64,7 @@ const SEGMENTS = {
       },
     ],
     quotes: projectCases['warner-channel'].quotes,
+    whatsappText: 'Hola Tinge, vengo de la página de entretenimiento y quiero hablar de mi marca.',
     ctaTitle: 'Tu marca ya vive en la memoria de la gente.',
     ctaText: 'Hagamos que crezca con las nuevas generaciones.',
   },
@@ -90,6 +102,7 @@ const SEGMENTS = {
       },
     ],
     quotes: projectCases.bimbo.quotes,
+    whatsappText: 'Hola Tinge, vengo de la página de consumo masivo y quiero hablar de mi marca.',
     ctaTitle: 'Tu marca necesita más contenido cada mes.',
     ctaText: 'Hagamos que cada pieza construya marca.',
   },
@@ -117,8 +130,13 @@ export default function SegmentLanding({ segment }) {
           <Reveal as="p" className="rc-eyebrow rc-lp-eyebrow" delay={0.05}>{cfg.eyebrow}</Reveal>
           <Reveal as="h1" className="rc-lp-title rc-poster" delay={0.15} y={26}>{cfg.title}</Reveal>
           <Reveal as="p" className="rc-hero-sub" delay={0.25}>{cfg.sub}</Reveal>
-          <Reveal delay={0.32}>
-            <a href="#hablemos" className="rc-btn-blue">Hablemos →</a>
+          <Reveal className="rc-lp-ctas" delay={0.32}>
+            <a href={waLink(cfg.whatsappText)} target="_blank" rel="noreferrer" className="rc-btn-wa">
+              <WhatsAppIcon /> WhatsApp
+            </a>
+            <a href={CALENDAR_URL} target="_blank" rel="noreferrer" className="rc-btn-light">
+              Agendar una reunión
+            </a>
           </Reveal>
         </div>
       </section>
@@ -230,6 +248,14 @@ export default function SegmentLanding({ segment }) {
             <span className="rc-eyebrow">Hablemos</span>
             <h2 className="rc-display">{cfg.ctaTitle}</h2>
             <p className="rc-contact-text">{cfg.ctaText}</p>
+            <div className="rc-lp-quick">
+              <a href={waLink(cfg.whatsappText)} target="_blank" rel="noreferrer" className="rc-btn-wa">
+                <WhatsAppIcon /> Escríbenos por WhatsApp
+              </a>
+              <a href={CALENDAR_URL} target="_blank" rel="noreferrer" className="rc-btn-outline">
+                Agendar una reunión →
+              </a>
+            </div>
             <div className="rc-contact-meta">
               <a href="mailto:team@tingestudio.co">team@tingestudio.co</a>
               <a href="tel:+573167224507">+57 316 722 4507</a>
@@ -242,6 +268,17 @@ export default function SegmentLanding({ segment }) {
       </section>
 
       <RcFooter base="/" />
+
+      {/* WhatsApp flotante: siempre a un toque */}
+      <a
+        href={waLink(cfg.whatsappText)}
+        target="_blank"
+        rel="noreferrer"
+        className="rc-wa-float"
+        aria-label="Escríbenos por WhatsApp"
+      >
+        <WhatsAppIcon />
+      </a>
     </div>
   )
 }

@@ -79,8 +79,8 @@
 .rc-nav-cta:hover { background: var(--blue-dim); color: #fff; }
 
 /* ---------- Buttons --------------------------------------------------- */
-.rc-btn-light { background: var(--ink); color: #0a0a0a; padding: 14px 28px; border-radius: 30px; font-size: 14px; margin-top: 6px; transition: opacity .2s; }
-.rc-btn-light:hover { opacity: 0.9; }
+.rc a.rc-btn-light, .rc-btn-light { background: var(--ink); color: #0a0a0a; padding: 14px 28px; border-radius: 30px; font-size: 14px; transition: opacity .2s; }
+.rc a.rc-btn-light:hover, .rc-btn-light:hover { opacity: 0.9; color: #0a0a0a; }
 .rc-btn-outline { border: 1px solid var(--blue); color: var(--blue); padding: 12px 24px; border-radius: 30px; font-size: 14px; white-space: nowrap; transition: all .2s; }
 .rc-btn-outline:hover { background: var(--blue); color: #fff; }
 .rc-btn-blue { background: var(--blue); color: #fff; padding: 15px 34px; border-radius: 30px; font-size: 14px; transition: background .2s; }
