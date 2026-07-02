@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { cms, getProjectBySlug } from '../../data/cms.js'
 import { toEmbedUrl } from '../../utils/html.js'
@@ -113,8 +112,6 @@ const QUOTE_COLORS = ['#A3FF12', '#FF6B9D', '#0055FF']
 export default function CaseStudyV3() {
   const { slug } = useParams()
   const caso = resolveCase(slug)
-
-  useEffect(() => { window.scrollTo(0, 0) }, [slug])
 
   if (!caso) {
     return (

@@ -10,9 +10,14 @@ Actualizado: julio 2026
 | `/proyecto/:slug` | **Página de caso (v3)** | producción |
 | `/contact` | **Contacto (v3)** — form a Netlify Forms | producción |
 | `/ejemplo-v3`, `/proyecto-v3/:slug` | alias de las anteriores (links viejos) | alias |
-| `/home-old`, `/contact-old` | versiones Webflow anteriores (respaldo) | backup |
-| `/work`, `/about`, `/blog-1`, `/project/:slug`… | páginas Webflow | producción |
+| `/proyectos` (= `/work`) | **Proyectos (v3)** — portafolio completo | producción |
+| `/project/:slug` | redirect → `/proyecto/:slug` | redirect |
+| `/home-old`, `/work-old`, `/contact-old`, `/project-old/:slug` | versiones Webflow (respaldo) | backup |
 | `/ejemplo`, `/ejemplo-v2` | pruebas de diseño viejas | legacy |
+
+> Depurado (jul 2026): about, blog, pricing, productos y checkout se
+> eliminaron (rutas + páginas + html crudo). Solo quedan los respaldos de
+> home/work/contact/project.
 
 ## `src/`
 
