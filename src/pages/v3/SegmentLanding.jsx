@@ -63,10 +63,10 @@ const SEGMENTS = {
       {
         brand: 'The Walt Disney Company',
         slug: 'invasion-marvel',
-        desc: 'Tres programas, tres sistemas gráficos: Invasión Marvel, Sabatón y F1 Fox Premium. La fuerza de cada franquicia traducida a piezas que operan el canal día a día.',
+        desc: 'Tres programas, tres sistemas gráficos: la fuerza de cada franquicia traducida a piezas que operan el canal día a día.',
         metrics: [
           { num: '3', label: 'franquicias con sistema gráfico propio', color: '#0055FF' },
-          { num: '×3', label: 'Disney volvió a elegirnos, de 2020 a 2023', color: '#C084FC' },
+          { text: 'Marvel · Sabatón · F1', label: 'los toolkits que trabajamos juntos', color: '#C084FC' },
         ],
       },
       {
