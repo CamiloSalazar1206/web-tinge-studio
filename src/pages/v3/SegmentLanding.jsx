@@ -53,26 +53,28 @@ const SEGMENTS = {
       {
         brand: 'Warner Channel TV',
         slug: 'warner-channel',
-        desc: 'Rebranding, identidad en movimiento y hub de assets para toda Latinoamérica.',
+        desc: 'El brief pedía un restyling. Entregamos el concepto “Donde la historia crece contigo”, una identidad en movimiento y el hub de assets que hoy opera toda Latinoamérica.',
         metrics: [
           { num: '–80%', label: 'búsqueda de assets', color: '#A3FF12' },
           { num: '+3×', label: 'producción on-air', color: '#FF6B9D' },
+          { num: '100%', label: 'adopción en la primera semana', color: '#0055FF' },
         ],
       },
       {
         brand: 'The Walt Disney Company',
         slug: 'invasion-marvel',
-        desc: 'Concepto y sistemas gráficos para Invasión Marvel, Sabatón y F1 Fox Premium.',
+        desc: 'Tres programas, tres sistemas gráficos: Invasión Marvel, Sabatón y F1 Fox Premium. La fuerza de cada franquicia traducida a piezas que operan el canal día a día.',
         metrics: [
-          { num: '3', label: 'toolkits al aire', color: '#0055FF' },
+          { num: '3', label: 'sistemas gráficos al aire', color: '#0055FF' },
+          { text: '2020 – 2023', label: 'trabajando juntos', color: '#C084FC' },
         ],
       },
       {
         brand: 'ESPN · Estudio.la',
         slug: 'espn-scrum-mundial-2023',
-        desc: 'Dirección de arte y animación para el Scrum Mundial de Rugby 2023.',
+        desc: 'La cobertura del Mundial de Rugby con identidad propia: dirección de arte y animación para el aire de ESPN, junto a Estudio.la.',
         metrics: [
-          { text: 'Mundial de Rugby 2023', color: '#C084FC' },
+          { text: 'Mundial de Rugby 2023', label: 'evento en vivo para toda la región', color: '#A3FF12' },
         ],
       },
     ],
@@ -93,27 +95,29 @@ const SEGMENTS = {
       {
         brand: 'Bimbo · Vital',
         slug: 'bimbo',
-        desc: 'Concepto y sistema de producción con IA y curaduría humana, con el producto en el centro.',
+        desc: 'Un sistema que combina IA con curaduría humana sobre las producciones que ya existían, con el producto y la experiencia en el centro.',
         metrics: [
           { num: '–50%', label: 'tiempo de producción', color: '#A3FF12' },
           { num: '+40%', label: 'reutilización de contenido', color: '#FF6B9D' },
+          { num: '2×', label: 'piezas en la mitad del tiempo', color: '#0055FF' },
         ],
       },
       {
         brand: 'Bimbo · Artesano',
         slug: 'artesano-eleva-tus-sentidos',
-        desc: 'Campaña regional en Colombia, Ecuador y Centroamérica.',
+        desc: 'El concepto “Eleva tus sentidos” desplegado en Colombia, Ecuador y Centroamérica, alineado a los objetivos de negocio de la marca.',
         metrics: [
           { num: '+22 pts', label: 'Value SOM', color: '#0055FF' },
-          { text: 'Premio GBF 2022', color: '#C084FC' },
+          { text: 'Premio GBF 2022', label: 'reconocimiento de la categoría', color: '#C084FC' },
         ],
       },
       {
         brand: 'Danone · Danet Shake',
         slug: 'danet-shake',
-        desc: 'Una idea de conexión en plena pandemia: cada compra lleva un mensaje personalizado.',
+        desc: '“Supera las distancias”: en plena pandemia, un comercial donde cada compra lleva un mensaje personalizado que acerca a la gente.',
         metrics: [
-          { num: '3', label: 'influencers de la juventud española', color: '#A3FF12' },
+          { num: '3', label: 'influencers top de la juventud española', color: '#A3FF12' },
+          { text: 'Animación 3D', label: 'publicidad dinámica para Danone España', color: '#FF6B9D' },
         ],
       },
     ],
