@@ -147,6 +147,7 @@ export const projectCases = {
     metrics: [
       { num: '–40%', label: 'Tiempo de producción', color: '#A3FF12' },
       { num: '+3×', label: 'Capacidad de producción', color: '#FF6B9D' },
+      { num: 'Récord', label: 'El mejor pico de ventas en un mes desde 2024', color: '#0055FF' },
     ],
     cover: '/casos/ikis-cover.jpg',
     // Todos los formatos del lanzamiento son verticales, van en pares.
@@ -156,7 +157,13 @@ export const projectCases = {
       { type: 'video', src: '/casos/ikis-fooh-arkadia.mp4', alt: 'Charms IKIS, FOOH Arkadia', orient: 'v' },
       { type: 'video', src: '/casos/ikis-punto-venta.mp4', alt: 'Charms IKIS, activación en punto de venta', orient: 'v' },
     ],
-    quotes: [],
+    quotes: [
+      {
+        text: '¡Nos fue súper bien! Los comentarios, espectaculares: súper bien recibido por el consumidor. Ventas disparadas, no teníamos ese pico en un mes desde el 2024. Quedamos muy, muy felices: así es como se construye marca, con piezas llamativas y muy alineadas con la marca.',
+        role: 'Brand Manager',
+        company: 'Marinela · Grupo Bimbo',
+      },
+    ],
   },
 
   'artesano-eleva-tus-sentidos': {

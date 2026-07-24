@@ -100,10 +100,11 @@ const SEGMENTS = {
         metrics: [
           { num: '–40%', label: 'tiempo de producción', color: '#A3FF12' },
           { num: '+3×', label: 'capacidad de producción', color: '#FF6B9D' },
+          { text: 'Ventas récord', label: 'el mejor pico mensual desde 2024', color: '#0055FF' },
         ],
       },
     ],
-    quotes: projectCases.bimbo.quotes,
+    quotes: [...projectCases.bimbo.quotes, ...projectCases['charms-ikis'].quotes],
     whatsappText: 'Hola Tinge 👋 Trabajo con una marca de consumo masivo y me gustaría conversar con ustedes.',
     ctaTitle: 'Tu marca necesita más contenido cada mes.',
     ctaText: 'Hagamos que cada pieza construya marca.',
