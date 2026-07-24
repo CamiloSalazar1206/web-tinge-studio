@@ -124,6 +124,41 @@ export const projectCases = {
     ],
   },
 
+  'charms-ikis': {
+    slug: 'charms-ikis',
+    tag: 'Sistema de producción + FOOH',
+    client: 'Charms IKIS',
+    company: 'Marinela · Grupo Bimbo',
+    category: 'Sistema de producción',
+    year: '2026',
+    problema:
+      'El lanzamiento de los coleccionables IKIS: los personajes tenían que vivir en muchos formatos a la vez, y la producción tradicional no escalaba.',
+    story: [
+      {
+        label: 'El reto',
+        text: 'Llevar los personajes, estáticos en el empaque, a todos los canales del lanzamiento sin multiplicar los tiempos de producción.',
+      },
+      {
+        label: 'La solución',
+        text: 'Un sistema visual que anima los personajes y los adapta a cualquier formato: FOOH en centros comerciales, redes y punto de venta.',
+      },
+    ],
+    serviciosList: ['Sistema visual', 'Animación de personajes', 'FOOH', 'Contenido para redes', 'Activación en punto de venta'],
+    metrics: [
+      { num: '–40%', label: 'Tiempo de producción', color: '#A3FF12' },
+      { num: '+3×', label: 'Capacidad de producción', color: '#FF6B9D' },
+    ],
+    cover: '/casos/ikis-cover.jpg',
+    // Todos los formatos del lanzamiento son verticales, van en pares.
+    visuals: [
+      { type: 'video', src: '/casos/ikis-hero.mp4', alt: 'Charms IKIS, hero de campaña', orient: 'v' },
+      { type: 'video', src: '/casos/ikis-fooh-fontanar.mp4', alt: 'Charms IKIS, FOOH Fontanar', orient: 'v' },
+      { type: 'video', src: '/casos/ikis-fooh-arkadia.mp4', alt: 'Charms IKIS, FOOH Arkadia', orient: 'v' },
+      { type: 'video', src: '/casos/ikis-punto-venta.mp4', alt: 'Charms IKIS, activación en punto de venta', orient: 'v' },
+    ],
+    quotes: [],
+  },
+
   'artesano-eleva-tus-sentidos': {
     slug: 'artesano-eleva-tus-sentidos',
     tag: 'Campaña + Sistema de producción',

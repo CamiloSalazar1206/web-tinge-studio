@@ -12,6 +12,10 @@
 .rc-lp-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 .rc-lp-quick { display: flex; flex-direction: column; align-items: stretch; gap: 12px; margin-top: 26px; width: fit-content; min-width: 320px; }
 
+/* Grilla de 4 casos en una fila (landing consumo) */
+.rc-cards-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) { .rc-cards-4 { grid-template-columns: 1fr; } }
+
 /* Resultados: tarjeta original con tipos más grandes, sección compacta */
 .rc-lp-results { padding: 46px var(--pad) 40px; }
 .rc-lp-results .rc-results-head { margin-bottom: 26px; }

@@ -71,7 +71,7 @@ const SEGMENTS = {
     title: <>Conectamos marcas de consumo<br />con nuevas generaciones.</>,
     sub: 'Campañas y sistemas de producción con IA para Bimbo y Danone: más contenido, en menos tiempo, sin perder la marca.',
     heroImage: '/casos/bimbo-cover.jpg',
-    cases: ['bimbo', 'artesano-eleva-tus-sentidos', 'danet-shake'],
+    cases: ['charms-ikis', 'bimbo', 'artesano-eleva-tus-sentidos', 'danet-shake'],
     resultsTitle: 'Resultados reales.',
     results: [
       {
@@ -94,12 +94,12 @@ const SEGMENTS = {
         ],
       },
       {
-        brand: 'Danone · Danet Shake',
-        slug: 'danet-shake',
-        desc: '“Supera las distancias”: en plena pandemia, un comercial donde cada compra lleva un mensaje personalizado que acerca a la gente.',
+        brand: 'Marinela · Charms IKIS',
+        slug: 'charms-ikis',
+        desc: 'El lanzamiento de los coleccionables IKIS: un sistema visual que animó los personajes y los llevó del empaque al FOOH y al punto de venta.',
         metrics: [
-          { num: '3', label: 'influencers top de la juventud española', color: '#A3FF12' },
-          { text: 'Animación 3D', label: 'publicidad dinámica para Danone España', color: '#FF6B9D' },
+          { num: '–40%', label: 'tiempo de producción', color: '#A3FF12' },
+          { num: '+3×', label: 'capacidad de producción', color: '#FF6B9D' },
         ],
       },
     ],
@@ -178,7 +178,7 @@ export default function SegmentLanding({ segment }) {
             <h2 className="rc-display">Marcas que ya lo hicieron.</h2>
           </div>
         </Reveal>
-        <div className="rc-cards">
+        <div className={`rc-cards${cases.length === 4 ? ' rc-cards-4' : ''}`}>
           {cases.map((c, i) => (
             <Reveal key={c.slug} delay={(i % 3) * 0.08}>
               <Link to={`/proyecto/${c.slug}`} className="rc-card">

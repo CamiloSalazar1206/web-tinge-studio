@@ -11,6 +11,7 @@ import '../../styles/v3/projects.css'
 const ORDER = [
   'warner-channel',
   'bimbo',
+  'charms-ikis',
   'artesano-eleva-tus-sentidos',
   'danet-shake',
   'espn-scrum-mundial-2023',
